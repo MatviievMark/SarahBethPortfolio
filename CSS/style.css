@@ -75,7 +75,7 @@ img {
 	width: 100%;
 	height: 100vh;
 	background: #fff url(../assets/Image/loading.gif) no-repeat center;
-	z-index: 999;
+	z-index: 12;
 }
 
 html {
@@ -91,10 +91,10 @@ html {
 	position: fixed;
 	bottom: 4rem;
 	right: 3rem;
-	z-index: 99;
+	z-index: 9;
 	border: none;
 	outline: none;
-	background-color: #0e1313;
+	background-color: var(--first-color);
 	color: var(--white);	
 	cursor: pointer;
 	padding: auto;
@@ -111,11 +111,10 @@ html {
 
 .navbar {
 	position: fixed;
-	z-index: 5;
+	z-index: 12;
 	width: 100%;
 	padding: 25px 0;
 	transition: all 0.3s ease;
-	z-index: 1000;
 }
 
 .navbar.sticky {
@@ -125,23 +124,22 @@ html {
 	box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
+.logo img {
+	max-width: 50%; /* This ensures the image is responsive and fits the container */
+	height: auto; /* Maintains aspect ratio */
+	vertical-align: middle;
+}
+
 .navbar .content {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
 
-.navbar .logo a {
-	/* color: #0e1313; */
-	color: var(--white);
-	font-size: 30px;
-	font-weight: 600;
-	text-decoration: none;
-}
-
 .navbar .menu-list {
 	display: inline-flex;
 	gap: 2rem;
+	align-items: center;
 }
 
 .menu-list li {
@@ -185,12 +183,170 @@ html {
 	top: 10px;
 }
 
+.contact-button {
+	display: inline-block; /* Structure it like a button */
+	padding: 10px 20px; /* Add padding to increase the size and make it more button-like */
+	border-radius: 25px; /* This will give you rounded corners. Adjust as needed. */
+	background-color: var(--second-color); /* Set the background color */
+	color: white; /* Set the text color */
+	text-decoration: none; /* Remove the underline from the link */
+	transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.contact-button:hover {
+	background-color: var(--second-color); /* Change background color on hover */
+	color: white; /* Keep text color white on hover */
+}
+
+/* BG img */
+
 .banner {
+	position:relative;
 	height: 100vh;
-	background: url("../assets/Image/background.jpeg") no-repeat;
+	background: url("../assets/Image/background4.jpeg") no-repeat;
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
+}
+
+
+
+/* Style for the text box */
+.text-box {
+	position: absolute;
+	top: 82vh; 
+	left: 50%;
+	transform: translate(-50%, -50%); 
+	padding: 1rem; 
+	color: white; 
+	text-align: center; 	
+	transition: opacity 0.5s
+	/* background: rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(10px); 
+	-webkit-backdrop-filter: blur(10px); */
+
+}
+
+  /* Style for the heading inside the text box */
+.text-box h1 {
+	margin: 0;
+	font-size: 4rem; 
+	font-weight: bodl; 
+	line-height: 4rem;
+}
+
+/* Stupido Policy */
+.studio-policy-overlay {
+	display: none; /* Initially hidden */
+	position: fixed; /* Fixed position */
+	top: 0; left: 0; /* Start from top-left corner */
+	width: 100%; height: 100%; /* Full width and height */
+	background-color: var(--first-color); /* Semi-transparent background */
+	overflow-y: auto; /* Enable vertical scrolling if content overflows */
+	z-index: 10; /* Ensure it's above other content */
+	flex-direction: column; /* Stack children vertically */
+	align-items: center; /* Center children horizontally */
+	justify-content: flex-start; /* Align content to the top */
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.studio-policy-header {
+    font-size: 6rem; /* Large font size for the header */
+    margin-top: 2%; /* Spacing from top */
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: var(--third-color);
+}
+
+.images-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%; /* Padding around images */
+	gap: 5rem;
+	flex-direction: column;
+}
+
+.images-container img {
+    width: 55.5rem; 
+    height: auto; 
+    border-radius: 15px; 
+}
+.button-container {
+    top: 100%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust the space between buttons as needed */
+	padding-bottom: 5%;
+}
+
+.overlay-button {
+    padding: 10px 20px;
+    font-size: 2rem;
+    border-radius: 30px;
+    background-color: var(--second-color); /* The color from your previous close button */
+    color: var(--third-color);
+    text-decoration: none;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	width: 200px; /* Set your desired width */
+    height: 60px;
+}
+
+/* Expantion of the image */
+
+.close-expanded-image-button {
+    position: fixed;
+    top: 90%; /* Adjust as needed */
+    right: 200px; /* Adjust as needed */
+    z-index: 15; /* Higher than the image to stay on top */
+    display: none; /* Initially hidden, will be shown when an image is expanded */
+    
+    /* New styles from .overlay-button */
+    padding: 10px 20px;
+    font-size: 2rem;
+    border-radius: 30px;
+    background-color: var(--second-color); /* Use the color variable from your CSS */
+    color: var(--third-color);
+    text-decoration: none;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    width: 200px; /* Set your desired width */
+    height: 60px; /* Set your desired height */
+}
+
+/* Style for the expanded image */
+.expandable-image.expanded {
+    position: fixed;
+    top: calc(60px + 1%); /* Adjust 60px to the actual height of your navbar, the 1% is for some additional spacing if needed */
+    left: 50%;
+    transform: translate(-50%, 4%);
+    z-index: 15;
+    width: calc(70vh - 60px); /* 70% of the viewport height minus the navbar height */
+    height: auto;
+    max-width: none;
+    max-height: none;
+    display: block;
+    cursor: zoom-out;
+}
+
+
+/* Disapble scrolling on background */
+.body-fixed {
+	position: fixed;
+	width: 100%;
 }
 
 /* Services */
@@ -220,7 +376,7 @@ html {
 .services-grid {
 	display: flex;
   	justify-content: space-around; /* Adjust as needed */
-	gap: 12rem;
+	gap: 10rem;
 	padding-bottom: 10rem;
 
 
@@ -248,7 +404,7 @@ html {
 
 .service-text {
 	margin-top: 3rem; /* Space between image and text */
-	font-size: 2.5rem; /* Adjust font size as needed */
+	font-size: 3.5rem; /* Adjust font size as needed */
 	font-weight: 500;
 	color: var(--first-color); /* Text color */
 	cursor: pointer; /* Change cursor on hover */
@@ -256,8 +412,9 @@ html {
 }
 
 .service-description {
-	font-size: 1.5rem; /* Smaller text size */
-	color: #6e6e6e; /* Light grey color, can be adjusted */
+	font-size: 1.6rem; /* Smaller text size */
+	color: var(--second-color);
+	/* color: #6e6e6e; */
 	text-align: center; /* Ensures the text is centered under each service */
 	margin-top: 0.5rem; /* Adds a little space between the service name and the description */
 	font-weight: 300; /* Lighter font weight, if the font supports it */
@@ -272,7 +429,7 @@ html {
 	top: 0;
 	left: 0;
 	background: rgba(255, 0, 0, 1); 
-	z-index: 100;
+	z-index: 10;
 	padding: 50px; 
 	box-sizing: border-box;
 	overflow-y: auto; 
@@ -398,9 +555,6 @@ html {
 	width: 400rem;
 }
 
-
-
-
 /* CONTACT */
 .contact {
 	background: var(--second-color);
@@ -471,6 +625,7 @@ html {
 	height: 400px;
 	width: 50%;
 	width: 40%;
+	z-index: 1;
 }
 @media (max-width: 800px) {
 	.contact-inputs{

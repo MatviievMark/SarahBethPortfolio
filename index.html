@@ -1,212 +1,243 @@
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0e1313" />
-  <link rel="manifest" href="./manifest.json">
-  <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="./public/apple-touch-icon.png">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0e1313" />
+    <link rel="manifest" href="./manifest.json">
+    <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./public/apple-touch-icon.png">
 
-  <title id="title">Mullen Music</title>
+    <title id="title">Mullen Music</title>
 
-  <!-- Import CSS File -->
-  <link rel="stylesheet" href="./CSS/style.css">
-  <link rel="stylesheet" href="./CSS/responsive.css">
+    <!-- Import CSS File -->
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/responsive.css">
 
-  <!-- Import Swiper -->
-  <link rel="stylesheet" href="./CSS/swiper-bundle.min.css">
-  <!-- Import Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <!-- Import Box Icons  -->
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <!-- Map -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <!-- Import Swiper -->
+    <link rel="stylesheet" href="./CSS/swiper-bundle.min.css">
+    <!-- Import Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Import Box Icons  -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
 
-</head>
+  </head>
 
-<body onload="preLoader()">
+  <body onload="preLoader()">
 
-  <div id="loading"></div>
+    <div id="loading"></div>
 
-  <!-- Go to Up button -->
-  <button onclick="topFunction()" id="moveTopBtn" title="Go to top"><i class="fas fa-angle-up"></i></button>
+    <!-- Go to Up button -->
+    <button onclick="topFunction()" id="moveTopBtn" title="Go to top"><i class="fas fa-angle-up"></i></button>
 
-  <!-- Navbar  -->
-  <nav class="navbar">
-    <div class="content">
-      <div class="logo"><a href="#">Sarah Beth Mullen Music</a></div>
-      <ul class="menu-list">
-        <div class="icon cancel-btn">
-          <i class="fas fa-times"></i>
+    <!-- Navbar  -->
+    <nav class="navbar">
+      <div class="content">
+        <div class="logo">
+          <a href="#">
+            <img src="./assets/Image/wordLogo.png" alt="Sarah Beth Mullen Music Logo">
+          </a>
         </div>
         
-        <li><a href="#services">Services</a></li> <!-- Services -->
-        <li><a href="#about">About</a></li> <!--About -->
-        <li><a href="#reviews">Reviews</a></li> <!--Reviews-->
-        <li><a href="#contact">Contact</a></li> <!--Contact-->
-      
-      </ul>
-      <div class="icon menu-btn">
-        <i class="fas fa-bars"></i>
-      </div>
-    </div>
-  </nav>
-
-  <div class="banner"></div>
-
-  <!-- Service Page -->
-  <section class="services" id="services">
-    <div class="container">
-      <h2 class="services-header">Here are some of my services</h2>
-      <div class="services-grid">
-        <!-- Service Item 1 -->
-        <div class="service-item" data-target="lessons-detail" id="service-lessons">
-          <img src="assets/Image/musicLesson.jpeg" alt="Music Lessons" class="service-image">
-          <p class="service-text">Lessons</p> 
-          <p class="service-description">Personalized music lessons tailored to your needs.</p>
-        </div>
-        <!-- Hidden Content for Lessons -->
-        <div id="lessons-detail" class="service-detail">
-          <p>Detailed information about music lessons...</p>
-          <button class="close-btn" data-target="service-lessons">&times;</button>
-        </div>
-  
-        <!-- Service Item 2 -->
-        <div class="service-item" data-target="instruments-detail" id="service-instruments">
-          <img src="assets/Image/string.jpeg" alt="String Instruments" class="service-image">
-          <p class="service-text">Instruments</p>
-          <p class="service-description">Wide range of string instruments for all skill levels.</p>
-        </div>
-        <!-- Hidden Content for Instruments -->
-        <div id="instruments-detail" class="service-detail">
-          <p>Detailed information about the instruments offered...</p>
-          <button class="close-btn" data-target="service-instruments">&times;</button>
-        </div>
-  
-        <!-- Service Item 3 -->
-        <div class="service-item" data-target="musician-detail" id="service-musician">
-          <img src="assets/Image/cello.jpeg" alt="Professional Musician" class="service-image">
-          <p class="service-text">Musician</p>
-          <p class="service-description">Hire a professional musician for your events.</p>
-        </div>
-        <!-- Hidden Content for Musician -->
-        <div id="musician-detail" class="service-detail">
-          <p>Detailed information about hiring a professional musician...</p>
-          <button class="close-btn" data-target="service-musician">&times;</button>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-
-  <!-- About me -->
-  <section class="about" id="about">
-    <div class="container">
-        <div class="about-content">
-            <img src="assets/Image/profilePicture.jpeg" alt="Your Name" class="about-image">
-            <di class = about-content2>
-                <h2 class="about-name">About me</h2>
-                <p class="about-text">Your professional title or a brief introduction. 
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-                <p class="about-text">A paragraph about your background and experience.
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-                <p class="about-text">Information about your education and training.
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-                <p class="about-text">Details about your services or what you offer.
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-                <p class="about-text">A personal note or hobby to make it more personable.
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-            </di>
-        </div>
-    </div>
-  </section>
-
-  <!-- ABOUT SECTION -->
-  <section class="reviews" id="reviews">
-    <div class="container">
-      <div class="testimonial mySwiper">
-        <div class="testi-content swiper-wrapper">
-          <!-- First slide -->
-          <div class="slide swiper-slide">
-            <img src="assets/Image/personImg1.png" alt="" class="testi-image">
-            <p class="testi-text">As a double bass instructor, Sarah Beth Mullen did a great job. 
-              She customized the lessons to my experience level and goals.
-              Although I had work schedule modifications during my time as her student, she adapted to the changes well. 
-              Whenever I had progressed enough to perform, she encouraged me to join her studio’s recitals, 
-              and agreeing to that was a wonderful choice. The recitals allowed me to progress at a more accelerated rate 
-              than I had been with lessons alone. If anyone wants to learn an instrument for which Sarah Beth Mullen provides lessons,
-              I would encourage that person to take those lessons from her.</p>
-            <i class='bx bxs-quote-alt-left quote-icon'></i>  
-            <div class="details">
-              <span class="name">A.M</span> 
-              <span class="role">Student</span>
-            </div>
+        <ul class="menu-list">
+          <div class="icon cancel-btn">
+            <i class="fas fa-times"></i>
           </div>
-  
-          <!-- Duplicate of the first slide -->
-          <div class="slide swiper-slide">
-            <img src="assets/Image/personImg2.png" alt="" class="testi-image">
-            <p class="testi-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <i class='bx bxs-quote-alt-left quote-icon'></i>  
-            <div class="details">
-              <span class="name">Joseph Joestar</span> 
-              <span class="role">Client</span>
-            </div>
-          </div>
-          <!-- Add more slides as needed -->
+          
+          <li><a href="#services">Services</a></li> <!-- Services -->
+          <li><a href="#about">About</a></li> <!--About -->
+          <li><a href="#reviews">Reviews</a></li> <!--Reviews-->
+          <li><a href="#studioPolicy" id="studioPolicy">StudioPolicy</a></li>
+          <li><a href="#contact" class="contact-button">Contact</a></li> <!--Contact-->
+
+        
+        </ul>
+        <div class="icon menu-btn">
+          <i class="fas fa-bars"></i>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
+      </div>
+    </nav>
+
+    <div class="banner">
+      <div class="text-box">
+        <!-- <h1>Romans 8:26</h1> -->
+        <h1>And we know that all things work together for good to those who love God,
+          to those who are the called according to His purpose - Romans 8:28
+        </h1>
       </div>
     </div>
-  </section>
-  
 
-  <section class="contact" id="contact">
-    <div class="contact-container">
-      <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
-          <div class="contact-left-title">
-              <h2>Get in touch</h2>   
-              <hr>
-          </div>
-          <input type="hidden" name="access_key" value="f941dd57-88c3-40ae-b7a1-89c135efdc82">
-          <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
-          <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
-          <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea> 
-          <button type="submit">Submit <img src="assets/assets/arrow_icon.png" alt=""></button>
-      </form>
-      <div id="map" class="map">
-          <!-- Map will be displayed here -->
-      </div>
+
+  <!-- Stupido Policy  -->
+  <div id="studioPolicyOverlay" class="studio-policy-overlay">
+    <h1 class="studio-policy-header">Studio Policy</h1>
+    <div class="images-container">
+        <img src="assets/Image/studioPolicy1.png" alt="Image 1" class="expandable-image">
+        <img src="assets/Image/studioPolicy2.png" alt="Image 2" class="expandable-image">
+    </div>
+    <div class="button-container">
+      <button class="overlay-button close-overlay-button">Close</button>
+      <a href="path/to/your/file.pdf" download class="overlay-button download-pdf-button">Download</a>
+    </div>
+    <button class="close-expanded-image-button">CLOSE</button> <!-- Close button for expanded image -->
   </div>
-  </section>
-
-  <!-- Import JS File -->
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  <script src="./JS/swiper-bundle.min.js"></script>
-  <script src="./JS/script.js"></script>
-  <script src="./RegisterServiceWorker.js"></script>
+  <div id="blurryBackground" class="hidden"></div> <!-- Blurry background wrapper -->
 
 
+    <!-- Service Page -->
+    <section class="services" id="services">
+      <div class="container">
+        <h2 class="services-header">Here are some of my services</h2>
+        <div class="services-grid">
+          <!-- Service Item 1 -->
+          <div class="service-item" data-target="lessons-detail" id="service-lessons">
+            <img src="assets/Image/musicLesson.jpeg" alt="Music Lessons" class="service-image">
+            <p class="service-text">Lessons</p> 
+            <p class="service-description">Personalized music lessons tailored to your needs.</p>
+          </div>
+          <!-- Hidden Content for Lessons -->
+          <div id="lessons-detail" class="service-detail">
+            <p>Detailed information about music lessons...</p>
+            <button class="close-btn" data-target="service-lessons">&times;</button>
+          </div>
+    
+          <!-- Service Item 2 -->
+          <div class="service-item" data-target="instruments-detail" id="service-instruments">
+            <img src="assets/Image/string.jpeg" alt="String Instruments" class="service-image">
+            <p class="service-text">Instruments</p>
+            <p class="service-description">Wide range of string instruments for all skill levels.</p>
+          </div>
+          <!-- Hidden Content for Instruments -->
+          <div id="instruments-detail" class="service-detail">
+            <p>Detailed information about the instruments offered...</p>
+            <button class="close-btn" data-target="service-instruments">&times;</button>
+          </div>
+    
+          <!-- Service Item 3 -->
+          <div class="service-item" data-target="musician-detail" id="service-musician">
+            <img src="assets/Image/cello1.jpeg" alt="Professional Musician" class="service-image">
+            <p class="service-text">Musician</p>
+            <p class="service-description">Hire a professional musician for your events.</p>
+          </div>
+          <!-- Hidden Content for Musician -->
+          <div id="musician-detail" class="service-detail">
+            <p>Detailed information about hiring a professional musician...</p>
+            <button class="close-btn" data-target="service-musician">&times;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
 
-</body>
+    <!-- About me -->
+    <section class="about" id="about">
+      <div class="container">
+          <div class="about-content">
+              <img src="assets/Image/profilePicture.jpeg" alt="Your Name" class="about-image">
+              <di class = about-content2>
+                  <h2 class="about-name">About me</h2>
+                  <p class="about-text">Your professional title or a brief introduction. 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                  <p class="about-text">A paragraph about your background and experience.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                  <p class="about-text">Information about your education and training.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                  <p class="about-text">Details about your services or what you offer.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                  <p class="about-text">A personal note or hobby to make it more personable.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+              </di>
+          </div>
+      </div>
+    </section>
 
-</html>
+    <!-- ABOUT SECTION -->
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <div class="testimonial mySwiper">
+          <div class="testi-content swiper-wrapper">
+            <!-- First slide -->
+            <div class="slide swiper-slide">
+              <img src="assets/Image/personImg1.png" alt="" class="testi-image">
+              <p class="testi-text">As a double bass instructor, Sarah Beth Mullen did a great job. 
+                She customized the lessons to my experience level and goals.
+                Although I had work schedule modifications during my time as her student, she adapted to the changes well. 
+                Whenever I had progressed enough to perform, she encouraged me to join her studio’s recitals, 
+                and agreeing to that was a wonderful choice. The recitals allowed me to progress at a more accelerated rate 
+                than I had been with lessons alone. If anyone wants to learn an instrument for which Sarah Beth Mullen provides lessons,
+                I would encourage that person to take those lessons from her.</p>
+              <i class='bx bxs-quote-alt-left quote-icon'></i>  
+              <div class="details">
+                <span class="name">A.M</span> 
+                <span class="role">Student</span>
+              </div>
+            </div>
+    
+            <!-- Duplicate of the first slide -->
+            <div class="slide swiper-slide">
+              <img src="assets/Image/personImg2.png" alt="" class="testi-image">
+              <p class="testi-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <i class='bx bxs-quote-alt-left quote-icon'></i>  
+              <div class="details">
+                <span class="name">Joseph Joestar</span> 
+                <span class="role">Client</span>
+              </div>
+            </div>
+            <!-- Add more slides as needed -->
+          </div>
+          <div class="swiper-button-next nav-btn"></div>
+          <div class="swiper-button-prev nav-btn"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    
+
+    <section class="contact" id="contact">
+      <div class="contact-container">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+            <div class="contact-left-title">
+                <h2>Get in touch</h2>   
+                <hr>
+            </div>
+            <input type="hidden" name="access_key" value="f941dd57-88c3-40ae-b7a1-89c135efdc82">
+            <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
+            <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
+            <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea> 
+            <button type="submit">Submit</button>
+        </form>
+        <div id="map" class="map">
+            <!-- Map will be displayed here -->
+        </div>
+    </div>
+    </section>
+
+    <!-- Import JS File -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="./JS/swiper-bundle.min.js"></script>
+    <script src="./JS/script.js"></script>
+    <script src="./RegisterServiceWorker.js"></script>
+
+
+
+  </body>
+
+  </html>

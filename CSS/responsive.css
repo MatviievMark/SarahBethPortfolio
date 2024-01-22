@@ -1,74 +1,5 @@
-/* @media (max-width: 815px) {
-    body.disabledScroll {
-        overflow: hidden;
-    }
-
-    .icon {
-        display: block;
-        height: 50px;
-        width: 50px;
-        text-align: center;
-        line-height: 52.5px;
-        border-radius: 50%;
-        z-index: 999;
-    }
-
-    .icon.cancel-btn {
-        display: none;
-    }
-
-    .icon.cancel-btn.show {
-        display: block;
-    }
-
-    .icon.hide {
-        display: none;
-    }
-
-    .navbar .menu-list {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100%;
-        background: linear-gradient(90deg, #bde1df 30%, #eca7a6 70%);
-        display: block;
-        padding: 40px 0;
-        text-align: center;
-        clip-path: circle(25px at calc(100% - 55px) calc(0% + 50px));
-        transition: all 0.3s ease;
-    }
-
-    .navbar.sticky .menu-list {
-        clip-path: circle(25px at calc(100% - 55px) calc(0% + 35px));
-    }
-
-    .navbar .menu-list.active {
-        clip-path: circle(75%);
-    }
-
-    .navbar .menu-list li {
-        margin-top: 45px;
-    }
-
-    .navbar .menu-list li a {
-        font-size: 23px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .slide p {
-        padding: 0 20px;
-    }
-    .nav-btn {
-        display: none;
-    }
-} */
-
-/* Existing CSS */
-
 /* Media Queries for Mobile Responsiveness */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) 
     /* Adjusting Font Sizes */
     .navbar .logo a, .menu-list li a, .about-name, .contact-left-title h2, .testi-text, .name, .role, .contact-inputs {
         font-size: calc(100% + 0.5vw); /* Dynamic font size */
@@ -108,12 +39,12 @@
         display: block;
         padding: 40px 0;
         text-align: center;
-        clip-path: circle(25px at calc(100% - 55px) calc(0% + 50px));
+        clip-path: circle(25px at calc(100% - 39px) calc(0% + 50px));
         transition: all 0.3s ease;
     }
 
     .navbar.sticky .menu-list {
-        clip-path: circle(25px at calc(100% - 55px) calc(0% + 35px));
+        clip-path: circle(25px at calc(100% - 39px) calc(0% + 35px));
     }
 
     .navbar .menu-list.active {
@@ -129,6 +60,25 @@
         color: #00467f;
     }
 
+    .navbar .menu-list li .contact-button {
+        color: var(--third-color);
+    }
+
+    .logo img {
+        max-width: 80%;
+    }
+
+    /* Bible Verse */
+
+    .banner .text-box {
+        width: 90%;
+    }
+
+    .banner .text-box h1 {
+        font-size: 2.2rem;
+        line-height: 2.3rem;
+    }
+
     /* Adjusting Layouts */
     .services-grid, .about-content, .contact-container {
         flex-direction: column;
@@ -142,12 +92,62 @@
     .swiper-button-next, .swiper-button-prev, .swiper-pagination {
         display: none; /* Hide swiper buttons on small screens */
     }
-}
 
-/* Additional Media Query for Extra Small Devices */
-@media only screen and (max-width: 480px) {
-    /* Further Font Size Adjustments for Very Small Screens */
-    .navbar .logo a, .menu-list li a, .about-name, .contact-left-title h2, .testi-text, .name, .role, .contact-inputs {
-        font-size: calc(100% + 1vw); /* Slightly larger for readability */
+    /* Services section */
+    .services-header {
+        font-size: 4rem;
+    } 
+    /* About me */
+    .about-content {
+        margin-top: 5rem;
+        gap: 5rem;
     }
-}
+    
+    .about-content h2 {
+        font-size: 4rem;
+    }
+
+    /* Reviews section */
+
+    .swiper-button-next.nav-btn {
+        display: none;
+    }
+    .swiper-button-prev.nav-btn {
+        display: none;
+    }
+
+    .testi-text{
+        font-size: 1.2rem;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .testimonial {
+        padding: 0;
+    }
+
+    /* Contact me form */
+    .contact-left-title h2 {
+        font-size: 5rem;
+    }
+
+    .contact-left {
+        margin-bottom: 3rem;
+        margin-bottom: 3rem;
+    }
+    
+    .contact-left button {
+        font-size: 2rem;
+    }
+
+    /* Studio Policy */
+
+    .studio-policy-overlay .expandable-image {
+        width: 100%;
+        overflow-x: hidden;
+        
+    }
+
+    .button-container {
+        width: 80%;
+    }
