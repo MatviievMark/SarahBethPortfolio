@@ -1,9 +1,6 @@
 /* Media Queries for Mobile Responsiveness */
-@media only screen and (max-width: 768px) 
-    /* Adjusting Font Sizes */
-    .navbar .logo a, .menu-list li a, .about-name, .contact-left-title h2, .testi-text, .name, .role, .contact-inputs {
-        font-size: calc(100% + 0.5vw); /* Dynamic font size */
-    }
+@media only screen and (max-width: 768px) {
+/* Adjusting Font Sizes */
 
     /* Navbar and Menu Adjustments */
     .icon {
@@ -151,3 +148,5 @@
     .button-container {
         width: 80%;
     }
+}
+    
