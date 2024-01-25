@@ -4,6 +4,8 @@ const navbar = document.querySelector(".navbar");
 const menu = document.querySelector(".menu-list");
 const menuBtn = document.querySelector(".menu-btn");
 const cancelBtn = document.querySelector(".cancel-btn");
+let overlayOpenCount = 0;
+let overlayJustOpened = false; // Flag to track if overlay was just opened
 
 
 
@@ -25,9 +27,30 @@ const siteLogo = document.querySelector('.logo a');
 
 // Get all the menu items
 const navLinks = document.querySelectorAll('.menu-list li');
+const studioPolicyBtn = document.getElementById('studioPolicy');
 
 
-// Add click event listener to each menu item
+// Function to open the studio policy overlay
+function openStudioPolicyOverlay() {
+  studioPolicyOverlay.style.display = 'flex';
+  overlayOpenCount = 1;
+  overlayJustOpened = true; // Set flag as overlay is just opened
+  setTimeout(() => overlayJustOpened = false, 100); // Reset flag after short delay
+}
+
+// Function to close the studio policy overlay
+function closeStudioPolicyOverlay() {
+  studioPolicyOverlay.style.display = 'none';
+  overlayOpenCount = 0;
+  document.body.classList.remove('body-fixed');
+  navbar.style.backgroundColor = ''; // Revert the navbar color
+
+}
+
+// Event listener for studioPolicyBtn
+studioPolicyBtn.addEventListener('click', openStudioPolicyOverlay);
+
+// Event listener for each menu item
 navLinks.forEach(item => {
   item.addEventListener('click', function () {
     // Remove the 'active' class from all menu items
@@ -35,6 +58,13 @@ navLinks.forEach(item => {
 
     // Add the 'active' class to the clicked menu item
     this.classList.add('active-menu-list');
+
+    // Close the studio policy overlay if it's open, and the clicked item is not studioPolicyBtn
+    if (item.id !== 'studioPolicy' && studioPolicyOverlay.style.display === 'flex' && overlayOpenCount === 1) {
+      if (!overlayJustOpened) { // Only close if the overlay wasn't just opened
+        closeStudioPolicyOverlay();
+      }
+    }
   });
 });
 
@@ -80,9 +110,6 @@ window.onscroll = () => {
   }
 }
 
-
-
-
 // Move to Top button
 var moveTopBtn = document.getElementById("moveTopBtn");
 
@@ -98,8 +125,6 @@ var loader = document.getElementById("loading");
 function preLoader() {
   loader.style.display = "none";
 }
-
-
 
 // Swiper
 var swiper = new Swiper(".mySwiper", {
@@ -183,21 +208,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const studioPolicyBtn = document.getElementById('studioPolicy');
   const closeOverlayBtn = document.querySelector('.close-overlay-button');
   const overlay = document.getElementById('studioPolicyOverlay');
-  const navbar = document.querySelector('.navbar'); // Adjust if your navbar has a different class or id
+   // Adjust if your navbar has a different class or id
 
   // Function to disable scrolling and change navbar background color
   function openOverlay() {
-    overlay.style.display = 'flex'; // Show the overlay
+    overlay.style.display = 'flex';
+    
     document.body.classList.add('body-fixed');
     navbar.style.backgroundColor = 'var(--first-color)';
   }
   
   // Function to enable scrolling and revert navbar background color
   function closeOverlay() {
-    overlay.style.display = 'none'; // Hide the overlay
+    overlay.style.display = 'none';
+    
     document.body.classList.remove('body-fixed');
     navbar.style.backgroundColor = ''; // Revert the navbar color
-
   }
 
   studioPolicyBtn.addEventListener('click', openOverlay);
@@ -232,15 +258,29 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   closeButton.addEventListener('click', function() {
-    // When closing, reset all images back to their default state and show the navbar
+    // Assuming '.studio-policy-overlay' is the class for the overlay that needs to be closed
+    const studioPolicyOverlay = document.querySelector('.studio-policy-overlay');
+  
+    // Close the studio policy overlay
+    if (studioPolicyOverlay) {
+      studioPolicyOverlay.style.display = 'none';
+    }
+  
+    // Show all images again (if necessary, depending on your use case)
     images.forEach(image => {
-      image.classList.remove('expanded');
-      image.style.display = 'block'; // Show all images again
+      image.style.display = 'block';
     });
+  
+    // Hide the close button itself
     this.style.display = 'none';
-    navbar.style.display = ''; // Show the navbar
-    document.body.classList.remove('body-fixed'); // Allow background scrolling
+  
+    // Show the navbar
+    navbar.style.display = 'flex'; // Adjust the display value to whatever it was initially (e.g., 'flex', 'block')
+  
+    // Allow background scrolling
+    document.body.classList.remove('body-fixed');
   });
+  
 });
 
 
@@ -297,24 +337,3 @@ document.addEventListener('DOMContentLoaded', function () {
     cancelBtn.classList.add('show'); // Show the cancel icon
   });
 });
-
-
-// // responsive js 
-//   // Get the elements
-//   const menuBtn = document.querySelector('.icon.menu-btn');
-//   const menuList = document.querySelector('.navbar .menu-list');
-//   const cancelBtn = document.querySelector('.icon.cancel-btn');
-
-//   // Event listener for menu button click
-//   menuBtn.addEventListener('click', function() {
-//     menuList.classList.add('active'); // Show the menu
-//     menuBtn.classList.add('hide'); // Hide the menu button
-//     cancelBtn.classList.add('show'); // Show the cancel button
-//   });
-
-//   // Event listener for cancel button click
-//   cancelBtn.addEventListener('click', function() {
-//     menuList.classList.remove('active'); // Hide the menu
-//     menuBtn.classList.remove('hide'); // Show the menu button
-//     cancelBtn.classList.remove('show'); // Hide the cancel button
-//   });
