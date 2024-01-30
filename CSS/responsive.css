@@ -146,7 +146,12 @@
     }
 
     .button-container {
+        margin-top: 3%;
         width: 80%;
+    }
+    .close-expanded-image-button {
+        left: 25%;
+        top: 80%
     }
 }
     

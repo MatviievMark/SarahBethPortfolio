@@ -56,18 +56,7 @@ img {
 	margin: auto;
 }
 
-/* CUSTOM SCROLLBAR */
-::-webkit-scrollbar {
-	width: 10px;
-}
 
-::-webkit-scrollbar-track {
-	background: #fff;
-}
-
-::-webkit-scrollbar-thumb {
-	background: var(--first-color);
-}
 
 /* LOADER */
 #loading {
@@ -199,7 +188,6 @@ html {
 }
 
 /* BG img */
-
 .banner {
 	position:relative;
 	height: 100vh;
@@ -214,18 +202,14 @@ html {
 /* Style for the text box */
 .text-box {
 	position: absolute;
-	top: 82vh; 
+	top: 82vh;
 	left: 50%;
 	width: 70%;
-	transform: translate(-50%, -50%); 
-	padding: 1rem; 
-	color: white; 
-	text-align: center; 	
-	transition: opacity 0.5s
-	/* background: rgba(255, 255, 255, 0.2);
-	backdrop-filter: blur(10px); 
-	-webkit-backdrop-filter: blur(10px); */
-
+	transform: translate(-50%, -50%);
+	padding: 1rem;
+	color: white;
+	text-align: center;
+	transition: opacity 0.5s;
 }
 
   /* Style for the heading inside the text box */
@@ -379,8 +363,6 @@ html {
   	justify-content: space-around; /* Adjust as needed */
 	gap: 10rem;
 	padding-bottom: 10rem;
-
-
 }
 
 .service-item {
@@ -424,21 +406,25 @@ html {
 
 /* Hidden detail container */
 .service-detail {
-	position: absolute;
-	width: 100%; /* full width */
-	height: 100%; /* full height */
-	top: 0;
-	left: 0;
-	background: rgba(255, 0, 0, 1); 
-	z-index: 10;
-	padding: 50px; 
-	box-sizing: border-box;
-	overflow-y: auto; 
-	
-	/* Animation */
-	transform: scale(0);
-	opacity: 0; 
-	transition: transform 0.3s ease, opacity 0.3s ease;
+    display: flex; /* Establishes a flex container */
+    flex-direction: row; /* Stacks flex items from top to bottom */
+    justify-content: center; /* Centers items along the main axis (vertical) */
+    align-items: center; /* Centers items along the cross axis (horizontal) */
+    position: absolute;
+    width: 100%; /* Full width of the parent */
+    height: 100%; /* Full height of the parent */
+    top: 0;
+    left: 0;
+    background: var(--third-color);
+    z-index: 10;
+    padding: 50px;
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    /* Animation */
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .service-detail.active {
@@ -458,6 +444,30 @@ html {
 	right: 10px;
 	font-size: 100px;
 	color: #333;
+	left: 80%; 
+	top: 30%;
+}
+
+.circle-link {
+    display: flex; /* Allows you to use flex properties for alignment */
+    justify-content: center; /* Centers text horizontally in the circle */
+    align-items: center; /* Centers text vertically in the circle */
+    margin: 35px; /* Adjust the space between circles */
+    width: 210px; /* Diameter of the circle */
+    height: 210px; /* Diameter of the circle */
+    border-radius: 50%; /* Makes the div circular */
+    background-color: var(--first-color); /* Circle color */
+    color: white; /* Text color */
+    text-align: center;
+    text-decoration: none; /* Removes underline from text */
+    font-weight: bold;
+	font-size: 2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.circle-link:hover {
+    transform: scale(1.1); /* Scales up the circle on hover */
+    background-color: var(--second-color); /* Changes color on hover */
 }
 
 

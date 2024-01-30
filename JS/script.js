@@ -147,6 +147,7 @@ var swiper = new Swiper(".mySwiper", {
 // Map 
 document.addEventListener('DOMContentLoaded', (event) => {
   var map = L.map('map').setView([32.3029937, -90.1803325], 18); // You can adjust the coordinates and zoom level
+  scrollWheelZoom: false;
 
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
       maxZoom: 19,
@@ -154,6 +155,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }).addTo(map);
 
   var marker = L.marker([32.3029937, -90.1803325]).addTo(map); // You can adjust the marker location
+
+  map.on('click', function() {
+    map.scrollWheelZoom.enable();
+  });
+
+  // Disable scroll wheel zoom on mouseout
+  map.on('mouseout', function() {
+    map.scrollWheelZoom.disable();
+  });
 });
 
 
