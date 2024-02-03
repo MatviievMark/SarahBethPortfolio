@@ -1,0 +1,198 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0e1313" />
+    <link rel="manifest" href="./manifest.json">
+    <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./public/apple-touch-icon.png">
+
+    <title id="title">Mullen Music</title>
+
+    <!-- Import CSS File -->
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/responsive.css">
+    <link rel="stylesheet" href="./CSS/services.css">
+
+    <!-- Import Swiper -->
+    <link rel="stylesheet" href="./CSS/swiper-bundle.min.css">
+    <!-- Import Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Import Box Icons  -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+
+    </head>
+
+    <body onload="preLoader()">
+
+    <div id="loading"></div>
+
+    <!-- Go to Up button -->
+    <button onclick="topFunction()" id="moveTopBtn" title="Go to top"><i class="fas fa-angle-up"></i></button>
+
+    <!-- Navbar  -->
+    <nav class="navbar">
+        <div class="content">
+        <div class="logo">
+            <a href="index.html#">
+            <img src="./assets/Image/wordLogo.png" alt="Sarah Beth Mullen Music Logo">
+            </a>
+        </div>
+        
+        <ul class="menu-list">
+            <div class="icon cancel-btn">
+            <i class="fas fa-times"></i>
+            </div>
+        
+            <li><a href="index.html#services">Services</a></li> <!-- Services -->
+            <li><a href="index.html#about">About</a></li> <!--About -->
+            <li><a href="index.html#reviews">Reviews</a></li> <!--Reviews-->
+            <li><a href="index.html#studioPolicy" id="studioPolicy">StudioPolicy</a></li>
+            <li><a href="index.html#contact" class="contact-button">Contact</a></li> <!--Contact-->
+
+        
+        </ul>
+        <div class="icon menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+        </div>
+    </nav>
+
+    <div class="banner">
+        <div class="text-box">
+        <h1>And we know that all things work together for good to those who love God,
+            to those who are the called according to His purpose - Romans 8:28
+        </h1>
+        </div>
+    </div>
+
+
+    <!-- Service Page -->
+    <section class="services" id="services">
+      <div class="container flex-container">
+        <!-- Left Column for Ages 5-6 -->
+        <div class="left-column">
+          <h2 class="children-header">Children</h2>
+          <div class="price-circle">
+            <span class="price">$125</span><span class="month">/month*</span>
+          </div>
+          <ul class="details full-width">
+            <li><strong>30-min</strong> or <strong>60-min</strong> lessons available</li>
+            <li><strong>15 lessons</strong> each in Fall and Spring, with make-ups</li>
+            <li>Summer includes 5 lessons</li>
+            <li><strong>Performance opportunities</strong> each semester</li>
+            <li>Parent required for students under 10</li>
+          </ul>
+          
+        </div>
+    
+        <!-- Right Column for About Lessons -->
+        <div class="right-column flex-center">
+          <div class="about-lessons">
+            <h2>ABOUT LESSONS:</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="how-it-works">
+            <h2>WHAT WE WILL DO</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="get-started">
+            <h2>WHATS NEXT</h2>
+            <p>Scroll down to begin the registration process</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <section class="register">
+      <div class="container registerContainer">
+        <div id = "calendar">
+          <h1>Semester Calendar</h1>
+          <hr>
+        </div>
+        <form action="https://api.web3forms.com/submit" method="POST" id="registrationForm">
+          <label class="restistrationLb">Regirstration</label>
+          <br>
+          <hr>
+          <input type="hidden" name="access_key" value="f941dd57-88c3-40ae-b7a1-89c135efdc82">
+      
+          <input type="text" id="registrarName" name="name" placeholder="Your Name" required>
+      
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+      
+          <input type="text" id="studentName" name="student_name" placeholder="Student's Name" required>
+      
+          <input type="number" id="age" name="age" placeholder="Student's Age" required min="0">
+      
+          <label class = "instrumentLb" for="instrument">Choose an Instrument</label>
+          <select id="instrument" name="instrument">
+              <option value="piano">Piano</option>
+              <option value="guitar">Cello</option>
+              <option value="violin">Violin</option>
+          </select>
+      
+          <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+      
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </section>
+    
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+        <div class="footer-col">
+          <h4>Studio</h4>
+          <ul>
+          <li><a href="#">Home</a></li> 
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Reviews</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul>
+          <li><a href="mailto:email@gmail.com">email@gmail.com</a></li>
+          <li><a href="tel:+16015869615">601-586-9615</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=First+Baptist+Church">First Baptist Church</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        </div>
+        <div class="footer-bottom">
+          &copy; Sarah Beth Mullen Music | Designed by Mark Matviiev
+        </div>
+      </div>
+    </footer>
+    
+    
+
+
+
+    <!-- Import JS File -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="./JS/swiper-bundle.min.js"></script>
+    <script src="./JS/script.js"></script>
+    <script src="./JS/calScript.js"></script>
+    <script src="./RegisterServiceWorker.js"></script>
+
+
+
+    </body>
+
+    </html>

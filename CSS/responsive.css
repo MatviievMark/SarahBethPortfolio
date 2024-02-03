@@ -1,0 +1,175 @@
+/* Media Queries for Mobile Responsiveness */
+@media only screen and (max-width: 768px) {
+/* Adjusting Font Sizes */
+
+    /* Navbar and Menu Adjustments */
+    .icon {
+        display: block;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        line-height: 52.5px;
+        border-radius: 50%;
+        z-index: 999;
+        color: #00467f;
+    }
+
+    .icon.cancel-btn {
+        display: none;
+    }
+
+    .icon.cancel-btn.show {
+        display: block;
+    }
+
+    .icon.hide {
+        display: none;
+    }
+
+    .navbar .menu-list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background: #bfe2ff;
+        display: block;
+        padding: 40px 0;
+        text-align: center;
+        clip-path: circle(25px at calc(100% - 39px) calc(0% + 50px));
+        transition: all 0.3s ease;
+    }
+
+    .navbar.sticky .menu-list {
+        clip-path: circle(25px at calc(100% - 39px) calc(0% + 35px));
+    }
+
+    .navbar .menu-list.active {
+        clip-path: circle(75%);
+    }
+
+    .navbar .menu-list li {
+        margin-top: 45px;
+    }
+
+    .navbar .menu-list li a {
+        font-size: 23px;
+        color: #00467f;
+    }
+
+    .navbar .menu-list li .contact-button {
+        color: var(--third-color);
+    }
+
+    .logo img {
+        max-width: 80%;
+    }
+
+    /* Bible Verse */
+
+    .banner .text-box {
+        width: 90%;
+    }
+
+    .banner .text-box h1 {
+        font-size: 2.2rem;
+        line-height: 2.3rem;
+    }
+
+    /* Adjusting Layouts */
+    .services-grid, .about-content, .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item, .about-image, .contact-left, .map {
+        width: 90%; /* Full width with some padding */
+    }
+
+    .swiper-button-next, .swiper-button-prev, .swiper-pagination {
+        display: none; /* Hide swiper buttons on small screens */
+    }
+
+    /* Services section */
+    .services-header {
+        font-size: 4rem;
+    } 
+
+    .service-detail {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .circle-link {
+        height: 10rem;
+        width: 30rem;
+        margin: 1rem;
+        overflow: hidden;
+        border-radius: 0%;
+    }
+
+    .close-btn {
+        top: 30%;
+    }
+    /* About me */
+    .about-content {
+        margin-top: 5rem;
+        gap: 5rem;
+        
+    }
+    
+    .about-content h2 {
+        font-size: 4rem;
+    }
+
+    /* Reviews section */
+
+    .swiper-button-next.nav-btn {
+        display: none;
+    }
+    .swiper-button-prev.nav-btn {
+        display: none;
+    }
+
+    .testi-text{
+        font-size: 1.2rem;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .testimonial {
+        padding: 0;
+    }
+
+    /* Contact me form */
+    .contact-left-title h2 {
+        font-size: 5rem;
+    }
+
+    .contact-left {
+        margin-bottom: 3rem;
+        margin-bottom: 3rem;
+    }
+    
+    .contact-left button {
+        font-size: 2rem;
+    }
+
+    /* Studio Policy */
+
+    .studio-policy-overlay .expandable-image {
+        width: 100%;
+        overflow-x: hidden;
+        
+    }
+
+    .button-container {
+        margin-top: 3%;
+        width: 80%;
+    }
+    .close-expanded-image-button {
+        left: 25%;
+        top: 80%
+    }
+}
+    

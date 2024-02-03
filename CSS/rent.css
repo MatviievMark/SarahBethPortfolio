@@ -1,0 +1,143 @@
+:root {
+    --first-color: #00467f; 
+    --second-color: #0064b5; 
+    --third-color: #bfe2ff; 
+    --white: #e8eef1;
+}
+
+.rent {
+    background: var(--third-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.right-column {
+    width: 48%;
+    background: var(--first-color);
+    padding: 20px;
+    border-radius: 8px;
+    justify-content: center;
+}
+
+.right-column { 
+    color: var(--third-color);
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-lessons h2, .how-it-works h2, .get-started h2, .whyMe h2{
+    color: var(--white);
+}
+
+.about-lessons p, .how-it-works p, .get-started p {
+    margin-bottom: 20px;
+}
+
+.whyMe ul {
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+/* REGISTRATION */
+
+.registerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#registrationForm {
+    background: var(--first-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 40%; /* Adjust this as needed or use 100% for full width on mobile */
+}
+
+#registrationForm hr {
+    border: none;
+    width: 250px;
+    height: 5px;
+    background-color: var(--white);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.restistrationLb {
+    font-size: 3rem;
+    font-weight: bold;
+    padding-bottom: 2rem;
+    color: var(--third-color);
+}
+
+.instrumentLb {
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+    color: var(--third-color);
+}
+
+#registrationForm input[type="text"],
+#registrationForm input[type="email"],
+#registrationForm input[type="number"],
+#registrationForm select,
+#registrationForm textarea {
+    width: 300px;
+    height: 50px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    color: var(--first-color);
+    border-radius: 50px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+}
+
+#registrationForm textarea {
+    height: 140px;
+    padding-top: 15px;
+    border-radius: 20px;
+}
+
+#registrationForm input::placeholder,
+#registrationForm textarea::placeholder {
+    color: #a9a9a9;
+}
+
+#registrationForm button {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 17px;
+    color: var(--first-color);
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background: var(--third-color);
+    cursor: pointer;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .registerContainer {
+        flex-direction: column;
+    }
+
+    #registrationForm {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

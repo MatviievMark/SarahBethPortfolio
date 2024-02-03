@@ -1,0 +1,738 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+/* COMMON */
+section {
+	height: auto;
+	width: 100%;
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+}
+
+/* COLORS */
+:root {
+	--first-color: #00467f; 
+	--second-color: #0064b5; 
+	--third-color: #bfe2ff; 
+	--white: #e8eef1;
+}
+
+img {
+	-webkit-user-drag: none;
+	user-drag: none;
+}
+
+.container {
+	max-width: 138rem;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px 30px;
+}
+
+.row {
+	display: flex;
+	gap: 20px;
+}
+
+.left-col {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	margin: auto;
+}
+
+.right-col {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	margin: auto;
+}
+
+
+
+/* LOADER */
+#loading {
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background: #fff url(../assets/Image/loading.gif) no-repeat center;
+	z-index: 12;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+/* MOVE TO TOP */
+#moveTopBtn {
+	height: 4.5rem;
+	width: 4.2rem;
+	display: none;
+	position: fixed;
+	bottom: 4rem;
+	right: 3rem;
+	z-index: 9;
+	border: none;
+	outline: none;
+	background-color: var(--first-color);
+	color: var(--white);	
+	cursor: pointer;
+	padding: auto;
+	border-radius: .4rem;
+	font-size: 2.5rem;
+}
+
+/* NAVBAR */
+.content {
+	max-width: 1250px;
+	margin: auto;
+	padding: 0px 30px;
+}
+
+.navbar {
+	position: fixed;
+	z-index: 12;
+	width: 100%;
+	padding: 25px 0;
+	transition: all 0.3s ease;
+}
+
+.navbar.sticky {
+	padding: 10px 0;
+	/* background: linear-gradient(90deg, #bde1df 30%, #eca7a6 70%); */
+	background: var(--first-color);
+	box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+	max-width: 50%; /* This ensures the image is responsive and fits the container */
+	height: auto; /* Maintains aspect ratio */
+	vertical-align: middle;
+}
+
+.navbar .content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navbar .menu-list {
+	display: inline-flex;
+	gap: 2rem;
+	align-items: center;
+}
+
+.menu-list li {
+	list-style: none;
+}
+
+.menu-list li a {
+	color: var(--white);
+	font-size: 18px;
+	font-weight: 500;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+.menu-list li a:hover {
+	/* color: #0e1313; */
+	color: var(--third-color)
+}
+
+.active-menu-list {
+	/* border-bottom: 2px solid #0e1313; */
+	border-bottom: 2px solid #bde1df;
+	width: fit-content;
+	margin: auto;
+}
+
+.icon {
+	color: #c1c1c1;
+	font-size: 20px;
+	cursor: pointer;
+	display: none;
+}
+
+.icon.cancel-btn {
+	position: absolute;
+	right: 30px;
+	top: 20px;
+}
+
+.navbar.sticky .icon.cancel-btn {
+	top: 10px;
+}
+
+.contact-button {
+	display: inline-block; /* Structure it like a button */
+	padding: 10px 20px; /* Add padding to increase the size and make it more button-like */
+	border-radius: 25px; /* This will give you rounded corners. Adjust as needed. */
+	background-color: var(--second-color); /* Set the background color */
+	color: white; /* Set the text color */
+	text-decoration: none; /* Remove the underline from the link */
+	transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.contact-button:hover {
+	background-color: var(--second-color); /* Change background color on hover */
+	color: white; /* Keep text color white on hover */
+}
+
+/* BG img */
+.banner {
+	position:relative;
+	height: 100vh;
+	background: url("../assets/Image/background4.jpeg") no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+
+
+/* Style for the text box */
+.text-box {
+	position: absolute;
+	top: 82vh;
+	left: 50%;
+	width: 70%;
+	transform: translate(-50%, -50%);
+	padding: 1rem;
+	color: white;
+	text-align: center;
+	transition: opacity 0.5s;
+}
+
+  /* Style for the heading inside the text box */
+.text-box h1 {
+	margin: 0;
+	font-size: 4rem; 
+	font-weight: bodl; 
+	line-height: 4rem;
+}
+
+/* Stupido Policy */
+.studio-policy-overlay {
+	display: none; /* Initially hidden */
+	position: fixed; /* Fixed position */
+	top: 0; left: 0; /* Start from top-left corner */
+	width: 100%; height: 100%; /* Full width and height */
+	background-color: var(--first-color); /* Semi-transparent background */
+	overflow-y: auto; /* Enable vertical scrolling if content overflows */
+	z-index: 10; /* Ensure it's above other content */
+	flex-direction: column; /* Stack children vertically */
+	align-items: center; /* Center children horizontally */
+	justify-content: flex-start; /* Align content to the top */
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.studio-policy-header {
+    font-size: 6rem; /* Large font size for the header */
+    margin-top: 2%; /* Spacing from top */
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: var(--third-color);
+}
+
+.images-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%; /* Padding around images */
+	gap: 5rem;
+	flex-direction: column;
+}
+
+.images-container img {
+    width: 55.5rem; 
+    height: auto; 
+    border-radius: 15px; 
+}
+.button-container {
+    top: 100%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust the space between buttons as needed */
+	padding-bottom: 5%;
+}
+
+.overlay-button {
+    padding: 10px 20px;
+    font-size: 2rem;
+    border-radius: 30px;
+    background-color: var(--second-color); /* The color from your previous close button */
+    color: var(--third-color);
+    text-decoration: none;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	width: 200px; /* Set your desired width */
+    height: 60px;
+}
+
+/* Expantion of the image */
+
+.close-expanded-image-button {
+    position: fixed;
+    top: 90%; /* Adjust as needed */
+    right: 200px; /* Adjust as needed */
+    z-index: 15; /* Higher than the image to stay on top */
+    display: none; /* Initially hidden, will be shown when an image is expanded */
+    
+    /* New styles from .overlay-button */
+    padding: 10px 20px;
+    font-size: 2rem;
+    border-radius: 30px;
+    background-color: var(--second-color); /* Use the color variable from your CSS */
+    color: var(--third-color);
+    text-decoration: none;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    width: 200px; /* Set your desired width */
+    height: 60px; /* Set your desired height */
+}
+
+/* Style for the expanded image */
+.expandable-image.expanded {
+    position: fixed;
+    top: calc(60px + 1%); /* Adjust 60px to the actual height of your navbar, the 1% is for some additional spacing if needed */
+    left: 50%;
+    transform: translate(-50%, 4%);
+    z-index: 15;
+    width: calc(70vh - 60px); /* 70% of the viewport height minus the navbar height */
+    height: auto;
+    max-width: none;
+    max-height: none;
+    display: block;
+    cursor: zoom-out;
+}
+
+
+/* Disapble scrolling on background */
+.body-fixed {
+	position: fixed;
+	width: 100%;
+}
+
+/* Services */
+
+.hidden {
+	display: none;
+}
+
+.services {
+	position: relative;
+	background: var(--third-color); 
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+	text-align: center;
+	
+}
+
+.services-header {
+	text-align: center;
+	font-size: 6rem;
+	margin-bottom: 12rem;
+	color: var(--first-color);
+	font-weight: 700;
+	margin-top: 8rem;
+}
+
+.services-grid {
+	display: flex;
+  	justify-content: space-around; /* Adjust as needed */
+	gap: 10rem;
+	padding-bottom: 10rem;
+}
+
+.service-item {
+	text-align: center; /* Center the content */
+	margin: auto;
+}
+
+.service-image {
+	width: 250px; /* Adjust size as needed, but keep it the same as height */
+	height: 250px; /* Make sure this is the same as width to get a perfect circle */
+	border-radius: 50%; /* This turns the square into a circle */
+	object-fit: cover; /* This will cover the area without stretching the image */
+	cursor: pointer; /* Change cursor on hover */
+	transition: transform 0.3s ease; /* Smooth transform on hover */
+	display: inline-block; /* Allows us to set width and height */
+	border: 5px solid var(--white);
+}
+
+.service-image:hover {
+	transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+.service-text {
+	margin-top: 3rem; /* Space between image and text */
+	font-size: 3.5rem; /* Adjust font size as needed */
+	font-weight: 500;
+	color: var(--first-color); /* Text color */
+	cursor: pointer; /* Change cursor on hover */
+	
+}
+
+.service-description {
+	font-size: 1.6rem; /* Smaller text size */
+	color: var(--second-color);
+	/* color: #6e6e6e; */
+	text-align: center; /* Ensures the text is centered under each service */
+	margin-top: 0.5rem; /* Adds a little space between the service name and the description */
+	font-weight: 300; /* Lighter font weight, if the font supports it */
+}
+
+
+/* Hidden detail container */
+.service-detail {
+    display: flex; /* Establishes a flex container */
+    flex-direction: row; /* Stacks flex items from top to bottom */
+    justify-content: center; /* Centers items along the main axis (vertical) */
+    align-items: center; /* Centers items along the cross axis (horizontal) */
+    position: absolute;
+    width: 100%; /* Full width of the parent */
+    height: 100%; /* Full height of the parent */
+    top: 0;
+    left: 0;
+    background: var(--third-color);
+    z-index: 10;
+    padding: 50px;
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    /* Animation */
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.service-detail.active {
+	transform: scale(1);
+	opacity: 1;
+}
+
+
+
+/* Close button inside detail container */
+.close-btn {
+	cursor: pointer;
+	background: none;
+	border: none;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 100px;
+	color: #333;
+	left: 80%; 
+	top: 30%;
+}
+
+.circle-link {
+    display: flex; /* Allows you to use flex properties for alignment */
+    justify-content: center; /* Centers text horizontally in the circle */
+    align-items: center; /* Centers text vertically in the circle */
+    margin: 35px; /* Adjust the space between circles */
+    width: 25rem; /* Diameter of the circle */
+    height: 25rem; /* Diameter of the circle */
+    border-radius: 50%; /* Makes the div circular */
+    background-color: var(--first-color); /* Circle color */
+    color: white; /* Text color */
+    text-align: center;
+    text-decoration: none; /* Removes underline from text */
+    font-weight: bold;
+	font-size: 2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.circle-link:hover {
+    transform: scale(1.1); /* Scales up the circle on hover */
+    background-color: var(--second-color); /* Changes color on hover */
+}
+
+
+/* ABOUT ME */
+.about {
+	background: var(--second-color);
+}
+
+.about-name{
+	font-size: 6rem;	
+	font-weight: 700;
+	color: var(--third-color);
+}
+
+.about-content {
+    display: flex;
+    align-items: left;
+    gap: 10rem; /* Adjust the gap to fit your design */
+	margin-top: 10rem;
+	margin-bottom: 1rem;
+}
+
+.about-image {
+    border-radius: 0%;
+	max-height: 60rem;
+}
+
+.about-content2 {
+	max-width: 90rem;
+}
+
+.about-text {
+	font-size: 2rem;
+	color: var(--third-color);
+	margin-top: 1.8rem ;
+}
+
+/* Revews */
+.reviews {
+	background: var(--third-color);
+}
+
+.testimonial {
+	position: relative; 
+	max-width: 120rem;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	padding: 5rem; /* Add some padding */
+}
+.testi-text	{
+	font-size: 2rem;
+	color: var(--first-color);
+	text-align: center;
+	padding: 0 100px;
+	font-weight: 500;	
+	row-gap: 30px;
+}
+
+.quote-icon {
+	font-size: 3rem;
+	color: var(--first-color);
+}
+
+.details {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.name{
+	font-size: 2rem;
+	color: var(--first-color);
+	font-weight: 600;
+}
+.role{
+	font-size: 2rem;
+	color: var(--first-color);
+	font-weight: 400;
+}
+
+.testimonial .testi-image {
+	height: 25rem;
+	width: 25rem;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.testimonial .slide {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	row-gap: 30px;
+	width: 400rem;
+}
+
+/* CONTACT */
+.contact {
+	background: var(--second-color);
+}
+
+.contact-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	margin-top: 10rem;
+	margin-bottom: 10rem;
+}
+.contact-left {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 20px;
+}
+.contact-left-title h2 {
+	font-weight: 600;
+	color: var(--third-color);
+	font-size: 6rem;   
+	margin-bottom: 5px;
+}
+.contact-left-title hr {
+	border: none;
+	width: 120px;
+	height: 5px;
+	background-color: var(--white) ;
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+.contact-inputs {
+	width: 400px;
+	height: 50px;
+	border: none;
+	outline: none;
+	padding-left: 25px;
+	font-weight: 500;
+	color: var(--first-color);
+	border-radius: 50px;
+	
+}
+.contact-left textarea {
+	height: 140px;
+	padding-top: 15px;
+	border-radius: 20px;
+}
+.contact-inputs:focus {
+	border: 2px solid var(--first-color);
+}
+.contact-inputs::placeholder {
+	color: #a9a9a9;
+}
+.contact-left button {
+	display: flex; 
+	align-items: center;
+	padding: 15px 30px;
+	font-size: 16px; 
+	color: var(--first-color);
+	gap: 10px; 
+	border: none;
+	border-radius: 50px;
+	background: var(--third-color);
+	cursor: pointer;
+}
+.map {
+	height: 400px;
+	width: 50%;
+	width: 40%;
+	z-index: 1;
+}
+@media (max-width: 800px) {
+	.contact-inputs{
+		width: 80vw;
+	}
+	
+}
+
+
+/* Footer */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: center;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: var(--third-color);
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+.footer-bottom {
+	margin-top: 20px;
+	padding-top: 20px;
+	color: rgba(255,255,255,0.2);
+	text-align: center;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
