@@ -26,6 +26,15 @@
         display: none;
     }
 
+    .banner {
+        position:relative;
+        height: 100vh;
+        background: url("../assets/Image/backgroundMobile.jpeg") no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
     .navbar .menu-list {
         position: fixed;
         top: 0;

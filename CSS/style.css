@@ -361,13 +361,13 @@ html {
 .services-grid {
 	display: flex;
   	justify-content: space-around; /* Adjust as needed */
+	align-items: flex-start;
 	gap: 10rem;
 	padding-bottom: 10rem;
 }
 
 .service-item {
-	text-align: center; /* Center the content */
-	margin: auto;
+	text-align: center; 
 }
 
 .service-image {
@@ -401,6 +401,7 @@ html {
 	text-align: center; /* Ensures the text is centered under each service */
 	margin-top: 0.5rem; /* Adds a little space between the service name and the description */
 	font-weight: 300; /* Lighter font weight, if the font supports it */
+	width: 30rem;
 }
 
 

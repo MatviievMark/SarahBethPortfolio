@@ -9,6 +9,12 @@
     background: var(--third-color);
 }
 
+.descriptionTitle {
+    font-size: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
