@@ -125,7 +125,7 @@
     /* Services section */
     .services-header {
         font-size: 4rem;
-        margin-bottom: 2rem;
+        /* margin-bottom: 2rem; */
     } 
 
     .services-instructions {
