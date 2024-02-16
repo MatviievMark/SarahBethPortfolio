@@ -403,12 +403,17 @@ html {
 
 .service-description {
 	font-size: 1.6rem; /* Smaller text size */
-	color: var(--second-color);
+	color: var(--first-color);
 	/* color: #6e6e6e; */
 	text-align: center; /* Ensures the text is centered under each service */
 	margin-top: 0.5rem; /* Adds a little space between the service name and the description */
 	font-weight: 300; /* Lighter font weight, if the font supports it */
 	width: 30rem;
+	background-color: var(--white);
+	border-radius: 2rem;
+	border-width: 1rem;
+	border-style: solid;
+	border-color: var(--white);
 }
 
 
