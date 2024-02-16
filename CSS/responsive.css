@@ -91,17 +91,41 @@
         align-items: center;
     }
 
+    .services-grid {
+        gap: 5rem;
+    }
+
     .service-item, .about-image, .contact-left, .map {
         width: 90%; /* Full width with some padding */
+    }
+
+    .service-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
     }
 
     .swiper-button-next, .swiper-button-prev, .swiper-pagination {
         display: none; /* Hide swiper buttons on small screens */
     }
 
+    .service-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .service-text   {
+        font-size: 3rem;
+    }
+    .service-description {
+        font-size: 1.4rem;
+    }
+
     /* Services section */
     .services-header {
         font-size: 4rem;
+        margin-bottom: 6rem;
     } 
 
     .service-detail {
@@ -180,5 +204,6 @@
         left: 25%;
         top: 80%
     }
+
 }
     
