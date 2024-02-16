@@ -297,3 +297,67 @@ document.addEventListener('DOMContentLoaded', function () {
     cancelBtn.classList.add('show'); // Show the cancel icon
   });
 });
+
+
+// center the hidden seciton in the service seciton 
+
+
+document.querySelectorAll('.service-item').forEach(item => {
+  item.addEventListener('click', function() {
+    // Get the clicked service item's details container
+    const detailId = this.getAttribute('data-target');
+    const detailElement = document.getElementById(detailId);
+
+    if (detailElement) {
+      // Delay to allow any CSS animations to complete
+      setTimeout(() => {
+        // Get the bounding rectangle of the detail container
+        const detailRect = detailElement.getBoundingClientRect();
+
+        // Calculate the scroll position to center the detail on screen, then adjust by a fixed offset
+        // Subtract a fixed number (e.g., 50 pixels) to move the scrolled position up a bit
+        const offset = 50; // Adjust this value as needed to move the position higher
+        const scrollPosition = detailRect.top + window.pageYOffset - (window.innerHeight / 2) + (detailRect.height / 2) - offset;
+
+        // Scroll the window to the new position
+        window.scrollTo({
+          top: scrollPosition,
+          behavior: 'smooth'
+        });
+      }, 300); // Match this delay with the duration of your CSS transitions
+    }
+  });
+});
+
+// document.querySelectorAll('.close-btn').forEach(btn => {
+//   btn.addEventListener('click', function() {
+//     const targetId = this.getAttribute('data-target');
+//     const serviceItem = document.getElementById(targetId);
+
+//     if (serviceItem) {
+//       const detailElement = serviceItem.querySelector('.service-detail');
+//       if (detailElement) {
+//         detailElement.classList.remove('active');
+//       }
+
+//       // Get the bounding rectangle of the service item
+//       const serviceItemRect = serviceItem.getBoundingClientRect();
+
+//       // Check if the service item is fully in the viewport
+//       const isFullyVisible = serviceItemRect.top >= 0 && serviceItemRect.bottom <= window.innerHeight;
+
+//       // Only scroll if the service item is not fully visible
+//       if (!isFullyVisible) {
+//         // Calculate the position to scroll to the service item
+//         // This will be the top of the service item minus half the window height plus half the height of the service item
+//         // to center it in the viewport
+//         const scrollPosition = window.pageYOffset + serviceItemRect.top - (window.innerHeight / 2) + (serviceItemRect.height / 2);
+
+//         window.scrollTo({
+//           top: scrollPosition,
+//           behavior: 'smooth'
+//         });
+//       }
+//     }
+//   });
+// });

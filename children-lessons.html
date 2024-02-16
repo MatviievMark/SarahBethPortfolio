@@ -79,12 +79,12 @@
         <div class="left-column">
           <h2 class="children-header">Children</h2>
           <div class="price-circle">
-            <span class="price">$125</span><span class="month">/month*</span>
+            <span class="price">$150</span><span class="month">/month*</span>
           </div>
           <ul class="details full-width">
             <li><strong>30-min</strong> or <strong>60-min</strong> lessons available</li>
-            <li><strong>15 lessons</strong> each in Fall and Spring, with make-ups</li>
-            <li>Summer includes 5 lessons</li>
+            <li><strong>18 lessons</strong> each in Fall and Spring, with make-ups</li>
+            <li>Summer lessons available</li>
             <li><strong>Performance opportunities</strong> each semester</li>
             <li>Parent required for students under 10</li>
           </ul>
@@ -117,7 +117,7 @@
           <hr>
         </div>
         <form action="https://api.web3forms.com/submit" method="POST" id="registrationForm">
-          <label class="restistrationLb">Regirstration</label>
+          <label class="restistrationLb">Registration</label>
           <br>
           <hr>
           <input type="hidden" name="access_key" value="f941dd57-88c3-40ae-b7a1-89c135efdc82">
@@ -135,6 +135,13 @@
               <option value="piano">Piano</option>
               <option value="guitar">Cello</option>
               <option value="violin">Violin</option>
+              <option value="violin">Double Bass</option>
+          </select>
+          
+          <label class = "instrumentLb" for="instrument">Permission to take photo </label>
+          <select id="picture" name="picture">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
           </select>
       
           <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
