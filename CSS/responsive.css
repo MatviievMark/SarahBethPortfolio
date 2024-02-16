@@ -125,8 +125,12 @@
     /* Services section */
     .services-header {
         font-size: 4rem;
-        margin-bottom: 6rem;
+        margin-bottom: 2rem;
     } 
+
+    .services-instructions {
+        font-size: 1.3rem;
+    }
 
     .service-detail {
         display: flex;

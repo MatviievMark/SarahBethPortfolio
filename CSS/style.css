@@ -352,10 +352,17 @@ html {
 .services-header {
 	text-align: center;
 	font-size: 6rem;
-	margin-bottom: 12rem;
+	/* margin-bottom: 12rem; */
 	color: var(--first-color);
 	font-weight: 700;
 	margin-top: 8rem;
+}
+
+.services-instructions {
+	font-size: 2rem;
+	margin-bottom: 10rem;
+	color: var(--first-color);
+	font-weight: 500;
 }
 
 .services-grid {
