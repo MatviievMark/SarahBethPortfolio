@@ -63,6 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
         calendar.style.height = formHeight + 'px';
     }
 
-    // Call the function to match heights
-    matchHeights();
+    // Check if the device is not mobile (e.g., screen width is 768px or more)
+    if (window.innerWidth >= 768) {
+        // Call the function to match heights only if not on a mobile display
+        matchHeights();
+    }
 });

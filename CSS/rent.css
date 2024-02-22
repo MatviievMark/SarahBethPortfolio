@@ -70,7 +70,6 @@
     align-items: center;
     padding: 20px;
     border-radius: 10px;
-    width: 40%; /* Adjust this as needed or use 100% for full width on mobile */
 }
 
 #registrationForm hr {

@@ -114,7 +114,7 @@
   align-items: center; /* Updated this line to center */
   padding: 20px;
   border-radius: 10px;
-  width: 40%; /* Set a max-width if you need */
+  width: 40%; 
 }
 
 /* Styling for Separator */
@@ -144,6 +144,8 @@
 }
 
 /* Input and Textarea Styling */
+#registrationForm input[type = "instrument"],
+#registrationForm input[type = "phone"],
 #registrationForm input[type="text"],
 #registrationForm input[type="email"],
 #registrationForm input[type="number"],
@@ -257,6 +259,9 @@ h2 {
   #calendar, #registrationForm {
     width: 100%;
     margin-bottom: 20px;
+  }
+  #calendar {
+    height: 600px;
   }
   
 }

@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
       maxZoom: 19,
-      attribution: 'Proudly made in Kyiv, Ukraine'
+      attribution: 'Made in Kyiv, Ukraine'
   }).addTo(map);
 
   var marker = L.marker([32.3029937, -90.1803325]).addTo(map); // You can adjust the marker location

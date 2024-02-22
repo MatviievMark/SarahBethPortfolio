@@ -15,7 +15,8 @@
 <!-- Import CSS File -->
 <link rel="stylesheet" href="./CSS/style.css">
 <link rel="stylesheet" href="./CSS/responsive.css">
-<link rel="stylesheet" href="./CSS/services.css">
+<link rel="stylesheet" href="./CSS/rent.css">
+
 
 <!-- Import Swiper -->
 <link rel="stylesheet" href="./CSS/swiper-bundle.min.css">
@@ -71,87 +72,31 @@
     </div>
 </div>
 
-
-<!-- Service Page -->
-<section class="services" id="services">
-  <div class="container flex-container">
-    <!-- Left Column for Ages 5-6 -->
-    <div class="left-column">
-      <h2 class="children-header">Children Group</h2>
-      <div class="price-circle">
-        <span class="price">$125</span><span class="month">/month*</span>
-      </div>
-      <ul class="details full-width">
-        <li><strong>60-min</strong> lessons available</li>
-        <li><strong>18 lessons</strong> each in Fall and Spring, with make-ups</li>
-        <li>Summer lessons available</li>
-        <li><strong>Performance opportunities</strong> each semester</li>
-        <li>Parent required for students under 10</li>
-      </ul>
+<!-- Repair -->
+<section id="rent" class="rent">
+    <div class="container flex-container">
+  
+        
+        <form action="https://api.web3forms.com/submit" method="POST" id="registrationForm">
+          <label class="restistrationLb">Schedule an appointment</label>
+          <br>
+          <hr>
+          <input type="hidden" name="access_key" value="f941dd57-88c3-40ae-b7a1-89c135efdc82">
       
-    </div>
-
-    <!-- Right Column for About Lessons -->
-    <div class="right-column flex-center">
-      <div class="about-lessons">
-        <h2>ABOUT LESSONS:</h2>
-        <p>Group Lessons consist of 2-4 students with 20 mintues of theory, private leson, and group lesson</p>
-      </div>
-      <div class="how-it-works">
-        <h2>WHAT WE WILL DO</h2>
-        <img class="whatWeDoImg" src="assets/Image/groupLessonImg.png" alt="Description of the image">
-      </div>
-      <div class="get-started">
-        <h2>WHATS NEXT</h2>
-        <p>Scroll down to begin the registration process</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="register">
-  <div class="container registerContainer">
-    <div id = "calendar">
-      <h1>Semester Calendar</h1>
-      <hr>
-    </div>
-    <form action="https://api.web3forms.com/submit" method="POST" id="registrationForm">
-      <label class="restistrationLb">Registration</label>
-      <br>
-      <hr>
-      <input type="hidden" name="access_key" value="f941dd57-88c3-40ae-b7a1-89c135efdc82">
-  
-      <input type="text" id="registrarName" name="name" placeholder="Your Name" required>
-  
-      <input type="email" id="email" name="email" placeholder="Your Email" required>
-  
-      <input type="text" id="studentName" name="student_name" placeholder="Student's Name" required>
-  
-      <input type="number" id="age" name="age" placeholder="Student's Age" required min="0">
-  
-      <label class = "instrumentLb" for="instrument">Choose an Instrument</label>
-          <select id="instrument" name="instrument">
-              <option value="piano">Piano</option>
-              <option value="guitar">Cello</option>
-              <option value="violin">Violin</option>
-              <option value="violin">Double Bass</option>
-          </select>
+          <input type="text" id="registrarName" name="name" placeholder="Your Name" required>
+      
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
           
-          <label class = "instrumentLb" for="instrument">Permission to take photo of child</label>
-          <select id="picture" name="picture">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-  
-      <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
-  
-      <button type="submit">Register</button>
-    </form>
-  </div>
+          <input type="number" id="number" name="number" placeholder="Your Phone Number" required>     
+          
+          <input type="text" id="instrument" name="instrument" placeholder="Your Instrument" required>          
+                
+          <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+      
+          <button type="submit">Register</button>
+        </form>
+    </div>
 </section>
-
-
 
 <footer class="footer">
   <div class="container">
@@ -159,10 +104,10 @@
     <div class="footer-col">
       <h4>Studio</h4>
       <ul>
-      <li><a href="index.html#">Home</a></li> 
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#reviews">Reviews</a></li>
+        <li><a href="index.html#">Home</a></li> 
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#reviews">Reviews</a></li>
       </ul>
     </div>
     
@@ -191,11 +136,11 @@
 
 
 
+
 <!-- Import JS File -->
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script src="./JS/swiper-bundle.min.js"></script>
 <script src="./JS/script.js"></script>
-<script src="./JS/calScript.js"></script>
 <script src="./RegisterServiceWorker.js"></script>
 
 
