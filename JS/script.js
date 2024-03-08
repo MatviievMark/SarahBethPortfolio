@@ -47,7 +47,7 @@ function closeStudioPolicyOverlay() {
 
 }
 
-// Event listener for studioPolicyBtn
+// Event listener for studioPolicyBtn 
 studioPolicyBtn.addEventListener('click', openStudioPolicyOverlay);
 
 // Event listener for each menu item
