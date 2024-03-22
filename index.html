@@ -126,18 +126,15 @@
           </div>
     
           <!-- Service Item 3 -->
-          <div class="service-item" data-target="musician-detail" id="service-musician">
-            <img src="assets/Image/cello1.jpeg" alt="Professional Musician" class="service-image">
-            <p class="service-text">Musician</p>
-            <p class="service-description">Add a special touch to the occasion. Live music. created and
-              tailored to your event. Let Sarah
-              Beth enhance your events atmosphere with her music.</p>
-          </div>
-          <!-- Hidden Content for Musician -->
-          <div id="musician-detail" class="service-detail">
-            <p>Detailed information about hiring a professional musician...</p>
-            <button class="close-btn" data-target="service-musician">&times;</button>
-          </div>
+          <a href="events.html" class="service-link">
+            <div class="service-item" data-target="musician-detail" id="service-musician">
+              <img src="assets/Image/cello1.jpeg" alt="Professional Musician" class="service-image">
+              <p class="service-text">Musician</p>
+              <p class="service-description">Add a special touch to the occasion. Live music. created and
+                tailored to your event. Let Sarah
+                Beth enhance your events atmosphere with her music.</p>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -261,7 +258,7 @@
 
     <section class="contact" id="contact">
       <div class="contact-container">
-        <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-left" id="registrationForm">
             <div class="contact-left-title">
                 <h2>Get in touch</h2>   
                 <hr>
@@ -269,7 +266,7 @@
             <input type="hidden" name="access_key" value="f941dd57-88c3-40ae-b7a1-89c135efdc82">
             <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
             <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
-            <input type="number" id="number" name="number" placeholder="Your Phone Number" required>     
+            <input type="number" id="number" name="number" placeholder="Your Phone Number" class="contact-inputs" required>     
             <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea> 
             <button type="submit">Submit</button>
         </form>
@@ -295,17 +292,16 @@
         <div class="footer-col">
           <h4>Contact Us</h4>
           <ul>
-          <li><a href="mailto:email@gmail.com">email@gmail.com</a></li>
-          <li><a href="tel:+16015869615">601-586-9615</a></li>
+          <li><a href="mailto:email@gmail.com">sarahbethmullenmusic@gmail.com</a></li>
+          <li><a href="tel:+16015869615">662-816-0310</a></li>
           <li><a href="https://www.google.com/maps/search/?api=1&query=First+Baptist+Church">First Baptist Church</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Follow Us</h4>
           <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/sarahbethmullenmusic"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/sarahbethmullenmusic/"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
         </div>

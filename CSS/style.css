@@ -483,6 +483,16 @@ html {
     background-color: var(--second-color); /* Changes color on hover */
 }
 
+/* HIRE ME SECTION */
+
+.service-link {
+	text-decoration: none;
+  }
+  
+  .service-link:hover .service-item {
+	/* Add any hover styles for the div when the link is hovered */
+	cursor: pointer;
+ }
 
 /* ABOUT ME */
 .about {
@@ -651,6 +661,7 @@ html {
 	width: 40%;
 	z-index: 1;
 }
+
 @media (max-width: 800px) {
 	.contact-inputs{
 		width: 80vw;
@@ -676,8 +687,8 @@ ul{
     padding: 70px 0;
 }
 .footer-col{
-   width: 25%;
-   padding: 0 15px;
+	width: 25%;
+	padding: 0 15px;
 }
 .footer-col h4{
 	font-size: 18px;

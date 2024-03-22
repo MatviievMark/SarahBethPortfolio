@@ -329,35 +329,9 @@ document.querySelectorAll('.service-item').forEach(item => {
   });
 });
 
-// document.querySelectorAll('.close-btn').forEach(btn => {
-//   btn.addEventListener('click', function() {
-//     const targetId = this.getAttribute('data-target');
-//     const serviceItem = document.getElementById(targetId);
+// THis is for the events page since it only needs a little bit of js 
 
-//     if (serviceItem) {
-//       const detailElement = serviceItem.querySelector('.service-detail');
-//       if (detailElement) {
-//         detailElement.classList.remove('active');
-//       }
-
-//       // Get the bounding rectangle of the service item
-//       const serviceItemRect = serviceItem.getBoundingClientRect();
-
-//       // Check if the service item is fully in the viewport
-//       const isFullyVisible = serviceItemRect.top >= 0 && serviceItemRect.bottom <= window.innerHeight;
-
-//       // Only scroll if the service item is not fully visible
-//       if (!isFullyVisible) {
-//         // Calculate the position to scroll to the service item
-//         // This will be the top of the service item minus half the window height plus half the height of the service item
-//         // to center it in the viewport
-//         const scrollPosition = window.pageYOffset + serviceItemRect.top - (window.innerHeight / 2) + (serviceItemRect.height / 2);
-
-//         window.scrollTo({
-//           top: scrollPosition,
-//           behavior: 'smooth'
-//         });
-//       }
-//     }
-//   });
-// });
+function scrollToContactEvents() {
+  const contactSection = document.getElementById('contact');
+  contactSection.scrollIntoView({ behavior: 'smooth' });
+}
