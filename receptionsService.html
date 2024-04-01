@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="manifest" href="./manifest.json">
+  <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="./public/apple-touch-icon.png">
+
+  <title id="title">Mullen Music</title>
+
+  <!-- Import CSS File -->
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="stylesheet" href="./CSS/responsive.css">
+  <link rel="stylesheet" href="./CSS/events.css">
+
+  <!-- Import Swiper -->
+  <link rel="stylesheet" href="./CSS/swiper-bundle.min.css">
+  <!-- Import Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Import Box Icons  -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+
+</head>
+
+<body onload="preLoader()">
+
+    <div id="loading"></div>
+
+    <!-- Go to Up button -->
+    <button onclick="topFunction()" id="moveTopBtn" title="Go to top"><i class="fas fa-angle-up"></i></button>
+
+    <!-- Navbar  -->
+    <nav class="navbar">
+      <div class="content">
+        <div class="logo">
+          <a href="index.html">
+            <img src="./assets/Image/wordLogo.png" alt="Sarah Beth Mullen Music Logo">
+          </a>
+        </div>
+        
+        <ul class="menu-list">
+          <div class="icon cancel-btn">
+            <i class="fas fa-times"></i>
+          </div>
+        
+        <li><a href="index.html#services">Services</a></li> <!-- Services -->
+        <li><a href="index.html#about">About</a></li> <!--About -->
+        <li><a href="index.html#reviews">Reviews</a></li> <!--Reviews-->
+        <li><a href="index.html#studioPolicy" id="studioPolicy">StudioPolicy</a></li>
+        <li><a href="index.html#contact" class="contact-button">Contact</a></li> <!--Contact-->
+
+        
+        </ul>
+        <div class="icon menu-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+
+    <div class="banner">
+      <div class="text-box">
+        <!-- <h1>Romans 8:26</h1> -->
+        <h1>And we know that all things work together for good to those who love God,
+          to those who are the called according to His purpose - Romans 8:28
+        </h1>
+      </div>
+    </div>
+    <!-- Descritpion -->
+    <section class="description-events" id="description-events">
+      <div class="description-container">
+        <h1>Receptions/Dinners</h1>
+        <p>Music is a vital part of any event. It sets the mood and creates a memorable experience for you and your guests. Sarah Beth Mullen Music offers a variety of ensembles to fit your event needs. Whether you are looking for a cello or a string quartet, we have you covered. We are here to help you create the perfect musical experience for your event.</p>
+        <button class="request-quote-btn" onclick="scrollToContactEvents()">Request a Quote</button>
+
+      </div>
+    </section>
+    <!-- EVENT OPTIONS -->
+    <section class="events" id="events">
+      <div class="solo-event">
+        <h1>SOLO VIOLIN OR CELLO</h1>
+        <p class="price">$400.00</p>
+        <hr>
+        <p class="description">A solo instrument is one instrument by itself with no accompaniment.</p>
+        <ul>
+          <li>20-30 minutes of prelude music as guests arrive</li>
+          <li>All ceremony music</li>
+          <li>Postlude as guests exit for reception</li>
+          <li>Unlimited consultation in person or by phone</li>
+        </ul>
+      </div>
+      
+      <div class="solo-event">
+        <h1>STRING DUO</h1>
+        <p class="price">$600.00&ast;</p>
+        <hr>
+        <p class="description">A string duo can be a combination of violin and cello (most popular) two violins, violin and guitar or violin and piano…</p>
+        <ul>
+          <li>20-30 minutes of prelude music as guests arrive</li>
+          <li>All ceremony music</li>
+          <li>Postlude as guests exit for reception</li>
+          <li>Unlimited consultation in person or by phone</li>
+        </ul>
+        <p class="fine-print">&ast;Violin and piano $800.00</p>
+      </div>
+
+      <div class="solo-event">
+        <h1>STRING TRIO</h1>
+        <p class="price">$800.00</p>
+        <hr>
+        <p class="description">A string trio consists of two (2) violins and a cello.</p>
+        <ul>
+          <li>30 minutes of prelude music as guests arrive</li>
+          <li>On-site rehearsal the day of event with other musicians (singers, soloists, etc.)</li>
+          <li>All ceremony music</li>
+          <li>Postlude as guests exit for reception</li>
+          <li>Unlimited consultation in person or by phone</li>
+        </ul>
+      </div>
+
+      <div class="solo-event">
+        <h1>STRING QUARTET</h1>
+        <p class="price">$1000.00</p>
+        <hr>
+        <p class="description">A string quartet consists of two (2) violins, a viola and cello.</p>
+        <ul>
+          <li>30 minutes of prelude music as guests arrive</li>
+          <li>On-site rehearsal the day of event with other musicians (singers, soloists, etc.)</li>
+          <li>All ceremony music</li>
+          <li>Postlude as guests exit for reception</li>
+          <li>Unlimited consultation in person or by phone</li>
+        </ul>
+      </div>
+    </section>
+    <!-- CONTACT US -->
+    <section class="contact" id="contact">
+      <div class="contact-container">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-left" id="registrationForm">
+          <div class="contact-left-title">
+              <h2>Get in touch</h2>   
+              <hr>
+          </div>
+          <input type="hidden" name="access_key" value="f941dd57-88c3-40ae-b7a1-89c135efdc82">
+          <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
+          <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
+          <input type="number" id="number" name="number" placeholder="Your Phone Number" class="contact-inputs" required>
+          <label class = "instrumentLb" for="group_type">What kind of ensemble are you interested in?</label>
+          <select title="group_type" id="group_type" name = "type" class="contact-inputs"required>
+            <option value="solo">SOLO VIOLIN OR CELLO</option>
+            <option value="duo">STRING DUO</option>
+            <option value="trio">STRING TRIO</option>
+            <option value="quartet">STRING QUARTET</option>
+            <option value="quartet">PIANO VIOLIN DUET</option>
+            <option value="quartet">PIANO CELLO DUET</option>
+          </select>
+          <label for="date" class="instrumentLb">When is your event?</label>
+          <input type="date" name="event_date" placeholder="When is your event?" class="contact-inputs" required>
+          <label for="date" class="instrumentLb">What time is your event?</label>
+          <input type="time" name="event_time" placeholder="What time is your event?" class="contact-inputs" required>
+          <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea> 
+          <button type="submit">Submit</button>
+      </form>
+    </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>Studio</h4>
+            <ul>
+              <li><a href="index.html#">Home</a></li> 
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="index.html#about">About</a></li>
+              <li><a href="index.html#reviews">Reviews</a></li>
+            </ul>
+          </div>
+        
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul>
+          <li><a href="mailto:email@gmail.com">sarahbethmullenmusic@gmail.com</a></li>
+          <li><a href="tel:+16015869615">662-816-0310</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=First+Baptist+Church">First Baptist Church</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+          <a href="https://www.facebook.com/sarahbethmullenmusic"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/sarahbethmullenmusic/"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        </div>
+        <div class="footer-bottom">
+          &copy; Sarah Beth Mullen Music | Designed by Mark Matviiev
+        </div>
+      </div>
+    </footer>
+<!-- Import JS File -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="./JS/swiper-bundle.min.js"></script>
+<script src="./JS/script.js"></script>
+<script src="./RegisterServiceWorker.js"></script>
+
+
+
+</body>

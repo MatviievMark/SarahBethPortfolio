@@ -1,0 +1,291 @@
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="manifest" href="./manifest.json">
+    <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./public/apple-touch-icon.png">
+
+    <title id="title">Mullen Music</title>
+
+    <!-- Import CSS File -->
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/responsive.css">
+
+    <!-- Import Swiper -->
+    <link rel="stylesheet" href="./CSS/swiper-bundle.min.css">
+    <!-- Import Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Import Box Icons  -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+
+  </head>
+
+  <body onload="preLoader()">
+
+    <div id="loading"></div>
+
+    <!-- Go to Up button -->
+    <button onclick="topFunction()" id="moveTopBtn" title="Go to top"><i class="fas fa-angle-up"></i></button>
+
+    <!-- Navbar  -->
+    <nav class="navbar">
+      <div class="content">
+        <div class="logo">
+          <a href="#">
+            <img src="./assets/Image/wordLogo.png" alt="Sarah Beth Mullen Music Logo">
+          </a>
+        </div>
+        
+        <ul class="menu-list">
+          <div class="icon cancel-btn">
+            <i class="fas fa-times"></i>
+          </div>
+        
+          <li><a href="#services">Services</a></li> <!-- Services -->
+          <li><a href="#about">About</a></li> <!--About -->
+          <li><a href="#reviews">Reviews</a></li> <!--Reviews-->
+          <li><a href="#studioPolicy" id="studioPolicy">StudioPolicy</a></li>
+          <li><a href="#contact" class="contact-button">Contact</a></li> <!--Contact-->
+
+        
+        </ul>
+        <div class="icon menu-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+
+    <div class="banner">
+      <div class="text-box">
+        <!-- <h1>Romans 8:26</h1> -->
+        <h1>And we know that all things work together for good to those who love God,
+          to those who are the called according to His purpose - Romans 8:28
+        </h1>
+
+      </div>
+    </div>
+
+
+  <!-- Stupido Policy  -->
+  <div id="studioPolicyOverlay" class="studio-policy-overlay">
+    <h1 class="studio-policy-header">Studio Policy</h1>
+    <div class="images-container">
+        <img src="assets/studioPolicy/slide1.png" alt="Image 1" class="expandable-image">
+        <img src="assets/studioPolicy/slide2.png" alt="Image 2" class="expandable-image">
+        <img src="assets/studioPolicy/slide3.png" alt="Image 3" class="expandable-image">
+        <img src="assets/studioPolicy/slide4.png" alt="Image 4" class="expandable-image">
+        <img src="assets/studioPolicy/slide5.png" alt="Image 5" class="expandable-image">
+        <img src="assets/studioPolicy/slide6.png" alt="Image 6" class="expandable-image">
+        <img src="assets/studioPolicy/slide7.png" alt="Image 7" class="expandable-image">
+    </div>
+    <div class="button-container">
+      <button class="overlay-button close-overlay-button">Close</button>
+      <a href="assets/docum/studioPolicy.pdf" download class="overlay-button download-pdf-button">Download</a>
+    </div>
+    <button class="close-expanded-image-button">CLOSE</button> <!-- Close button for expanded image -->
+  </div>
+  <div id="blurryBackground" class="hidden"></div> <!-- Blurry background wrapper -->
+
+
+    <!-- Service Page -->
+    <section class="services" id="services">
+      <div class="container">
+        <h2 class="services-header">Here are some of my services</h2>
+        <p class="services-instructions">(Click on the circle to expand)</p>
+        <div class="services-grid">
+          <!-- Service Item 1 -->
+          <div class="service-item" data-target="lessons-detail" id="service-lessons">
+            <img src="assets/Image/musicLesson.jpeg" alt="Music Lessons" class="service-image">
+            <p class="service-text">Lessons</p> 
+            <p class="service-description">Children and adults, learn to play an instrument. understand music
+              theory, and develop musical skills.
+              Lessons can be tailored to you or your child. Private and group lessons are available.</p>
+          </div>
+          <!-- Hidden Content for Lessons -->
+          <div id="lessons-detail" class="service-detail">
+            <a href="children-lessons.html" class="circle-link">Children Lessons</a>
+            <a href="children-group-lessons.html" class="circle-link">Children Group Lessons</a>
+            <a href="adult-lessons.html" class="circle-link">Adult Lessons</a>
+            <a href="adult-group-lessons.html" class="circle-link">Adult Group Lessons</a>
+            <button class="close-btn" data-target="service-lessons">&times;</button>
+          </div>
+    
+          <!-- Service Item 2 -->
+          <div class="service-item" data-target="instruments-detail" id="service-instruments">
+            <img src="assets/Image/string.jpeg" alt="String Instruments" class="service-image">
+            <p class="service-text">Instruments</p>
+            <p class="service-description">Need an instrument? Need a repair? Sarah Beth can offer both at competitive rates.</p>
+          </div>
+          <!-- Hidden Content for Instruments -->
+          <div id="instruments-detail" class="service-detail">
+            <a href="rent.html" class="circle-link">Rent</a>
+            <a href="repair.html" class="circle-link">Repair</a>
+            <button class="close-btn" data-target="service-lessons">&times;</button>
+          </div>
+    
+          <!-- Service Item 3 -->
+          
+            <div class="service-item" data-target="service-detail" id="service-lessons">
+              <img src="assets/Image/cello1.jpeg" alt="Services" class="service-image">
+              <p class="service-text">Musician</p>
+              <p class="service-description">Add a special touch to the occasion. Live music. created and
+                tailored to your event. Let Sarah
+                Beth enhance your events atmosphere with her music.</p>
+            </div>
+            <div id="service-detail" class="service-detail">
+              <a href="chruchServices.html" class="circle-link">Church Services</a>
+              <a href="weddings.html" class="circle-link">Weddings</a>
+              <a href="receptionsService.html" class="circle-link">Receptions</a>
+              <a href="otherEvents.html" class="circle-link">Other Events</a>
+              <button class="close-btn" data-target="service-lessons">&times;</button>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="imagesSlider" id="imagesSlider">
+      <div class="slider-container">
+        <button class="slider-button prev">&lt;</button>
+        <div class="slider-wrapper">
+            <div class="slider-item">
+              <img src="/assets/studioImgs/image1.jpg" alt="Image 1">
+            </div>
+            <div class="slider-item">
+              <img src="/assets/studioImgs/image2.jpg" alt="Image 2">
+            </div>
+            <div class="slider-item">
+              <img src="/assets/studioImgs/image3.jpg" alt="Image 3">
+            </div>
+            <div class="slider-item">
+              <img src="/assets/studioImgs/image4.jpg" alt="Image 4">
+            </div>
+            <div class="slider-item">
+              <img src="/assets/studioImgs/image5.jpg" alt="Image 5">
+            </div>
+          </div>
+        <button class="slider-button next">&gt;</button>
+        </div>
+    </div>
+    
+
+    <!-- About me -->
+    <section class="about" id="about">
+      <div class="container">
+          <div class="about-content">
+              <img src="assets/Image/profilePicture.jpeg" alt="Your Name" class="about-image">
+              <di class = about-content2>
+                  <h2 class="about-name">About her</h2>
+                  <p class="about-text">Meet Sarah Beth Mullen, a seasoned musician with a 
+                    profound affinity for the cello. Renowned as a dedicated instructor of 
+                    string and piano, she not only performs masterfully but also imparts her 
+                    extensive knowledge to budding musicians.                     
+                  </p>
+                  <p class="about-text">Sarah Beth's expertise further extends to the meticulous 
+                    care and restoration of string instruments, exemplifying her unwavering commitment 
+                    to the art of music. 
+                  </p>
+                  <p class="about-text">Notably, she completed an internship under the mentorship of 
+                    Mark Benischek at StringWorks in Illinois during the summer of 2023. 
+
+                  </p>
+                  <p class="about-text">Embark on a harmonious journey with Sarah Beth, where each note 
+                    resonates with a harmonious blend of passion and skill, or commence your own musical 
+                    journey under her guidance.
+                  </p>
+                  
+              </di>
+          </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <div class="testimonial mySwiper">
+          <div class="testi-content swiper-wrapper" id="reviewsContainer">
+            <!-- Reviews will be dynamically added here -->
+          </div>
+          <div class="swiper-button-next nav-btn"></div>
+          <div class="swiper-button-prev nav-btn"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    
+
+    <section class="contact" id="contact">
+      <div class="contact-container">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-left" id="registrationForm">
+            <div class="contact-left-title">
+                <h2>Get in touch</h2>   
+                <hr>
+            </div>
+            <input type="hidden" name="access_key" value="f941dd57-88c3-40ae-b7a1-89c135efdc82">
+            <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
+            <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
+            <input type="number" id="number" name="number" placeholder="Your Phone Number" class="contact-inputs" required>     
+            <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea> 
+            <button type="submit">Submit</button>
+        </form>
+        <div id="map" class="map">
+            <!-- Map will be displayed here -->
+        </div>
+    </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+        <div class="footer-col">
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="index.html#">Home</a></li> 
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#reviews">Reviews</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul>
+          <li><a href="mailto:email@gmail.com">sarahbethmullenmusic@gmail.com</a></li>
+          <li><a href="tel:+16015869615">662-816-0310</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=First+Baptist+Church">First Baptist Church</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+          <a href="https://www.facebook.com/sarahbethmullenmusic"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/sarahbethmullenmusic/"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        </div>
+        <div class="footer-bottom">
+          &copy; Sarah Beth Mullen Music | Designed and Developed by Mark Matviiev
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Import JS File -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="./JS/swiper-bundle.min.js"></script>
+    <script src="./JS/script.js"></script>
+    <script src="./RegisterServiceWorker.js"></script>
+    <script src="./JS/reviewsScript.js"></script>
+    <script src="./JS/imageSlider.js"></script>
+
+
+
+  </body>
+
+  </html>
