@@ -335,3 +335,9 @@ function scrollToContactEvents() {
   const contactSection = document.getElementById('contact');
   contactSection.scrollIntoView({ behavior: 'smooth' });
 }
+
+
+// Loading the footer 
+$(document).ready(function() {
+  $('#footer').load('footer.html');
+});

@@ -269,3 +269,10 @@ h2 {
 .whatWeDoImg {
   width: 25rem;
 }
+
+.finePrint  {
+  color: var(--white);
+  text-align: left;
+  font-size: 1.2rem;
+  text-align: center;
+}
