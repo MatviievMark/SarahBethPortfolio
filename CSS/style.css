@@ -524,10 +524,12 @@ html {
 }
 
 .slider-button.prev {
+	z-index: 1;
     left: 10px;
 }
 
 .slider-button.next {
+	z-index: 1;
     right: 10px;
 }
 
