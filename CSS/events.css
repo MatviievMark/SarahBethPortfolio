@@ -75,13 +75,13 @@
 }
 
 .otherProjectsContainer p {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 20px;
   color: black
 }
 
 .otherProjectsContainer ul{
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding-left: 50px;
   list-style-type: disc;
   font-weight: 300;
@@ -103,6 +103,12 @@ iframe {
   margin: 2rem 0;
 }
 @media screen and (max-width: 768px) {
+  .otherProjectsContainer h1 {
+    font-size: 4rem;
+  }
+  .description-container h1 {
+    font-size: 4rem;
+  }
   iframe {
     width: 100%;
     height: 25rem;

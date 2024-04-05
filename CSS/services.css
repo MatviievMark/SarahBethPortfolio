@@ -249,6 +249,11 @@ h2 {
 
 /* Add media queries to ensure responsiveness */
 @media (max-width: 768px) {
+
+  .description-container h1 {
+    font-size: 4rem;
+  }
+
   .flex-container, .registerContainer {
     flex-direction: column;
   }
