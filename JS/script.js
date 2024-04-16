@@ -146,7 +146,7 @@ var swiper = new Swiper(".mySwiper", {
 
 // Map 
 document.addEventListener('DOMContentLoaded', (event) => {
-  var map = L.map('map').setView([32.3029937, -90.1803325], 18); // You can adjust the coordinates and zoom level
+  var map = L.map('map').setView([32.298756, -90.184807], 12); // You can adjust the coordinates and zoom level
   scrollWheelZoom: false;
 
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       attribution: 'Made in Kyiv, Ukraine'
   }).addTo(map);
 
-  var marker = L.marker([32.3029937, -90.1803325]).addTo(map); // You can adjust the marker location
+  var marker = L.marker([32.298756, -90.184807]).addTo(map); // You can adjust the marker location
 
   map.on('click', function() {
     map.scrollWheelZoom.enable();
