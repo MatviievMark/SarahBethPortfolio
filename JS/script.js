@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // Function to disable scrolling and change navbar background color
   function openOverlay() {
     overlay.style.display = 'flex';
-    document.body.classList.add('body-fixed');
+    document.body.style.overflow = 'hidden'; // Set overflow to hidden on the body
     navbar.style.backgroundColor = 'var(--first-color)';
     overlay.scrollTop = 0; // Reset the scroll position to the top
   }
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // Function to enable scrolling and revert navbar background color
   function closeOverlay() {
     overlay.style.display = 'none';
-    document.body.classList.remove('body-fixed');
+    document.body.style.overflow = ''; // Reset overflow on the body
     navbar.style.backgroundColor = ''; // Revert the navbar color
   }
 

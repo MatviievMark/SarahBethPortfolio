@@ -286,6 +286,11 @@ html {
     height: 60px;
 }
 
+#studioPolicyOverlay {
+	/* Existing styles */
+	overflow-y: auto;
+}
+
 /* Expantion of the image */
 
 .close-expanded-image-button {
