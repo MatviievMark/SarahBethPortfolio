@@ -218,20 +218,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const studioPolicyBtn = document.getElementById('studioPolicy');
   const closeOverlayBtn = document.querySelector('.close-overlay-button');
   const overlay = document.getElementById('studioPolicyOverlay');
-   // Adjust if your navbar has a different class or id
 
   // Function to disable scrolling and change navbar background color
   function openOverlay() {
     overlay.style.display = 'flex';
-    
     document.body.classList.add('body-fixed');
     navbar.style.backgroundColor = 'var(--first-color)';
+    overlay.scrollTop = 0; // Reset the scroll position to the top
   }
-  
+
   // Function to enable scrolling and revert navbar background color
   function closeOverlay() {
     overlay.style.display = 'none';
-    
     document.body.classList.remove('body-fixed');
     navbar.style.backgroundColor = ''; // Revert the navbar color
   }
@@ -239,9 +237,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   studioPolicyBtn.addEventListener('click', openOverlay);
   closeOverlayBtn.addEventListener('click', closeOverlay);
 });
-
-
-
 
 
 

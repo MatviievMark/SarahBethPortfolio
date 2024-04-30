@@ -8,14 +8,28 @@ const slideWidth = sliderItems[0].clientWidth;
 const slideMargin = 10; // Adjust this value based on your CSS margin
 const visibleWidth = sliderWrapper.clientWidth;
 
-// Duplicate the first few slides and append them to the end
+// Duplicate slides on both ends
 const duplicateCount = Math.ceil(visibleWidth / (slideWidth + slideMargin));
 const totalItems = sliderItems.length;
 
-for (let i = 0; i < duplicateCount && i < totalItems; i++) {
+// Duplicate slides at the beginning
+for (let i = totalItems - duplicateCount; i < totalItems; i++) {
+  const duplicateItem = sliderItems[i].cloneNode(true);
+  sliderWrapper.insertBefore(duplicateItem, sliderItems[0]);
+}
+
+// Duplicate slides at the end
+for (let i = 0; i < duplicateCount; i++) {
   const duplicateItem = sliderItems[i].cloneNode(true);
   sliderWrapper.appendChild(duplicateItem);
 }
+
+// Update the total number of items after duplication
+const updatedTotalItems = sliderWrapper.children.length;
+
+// Set the initial position of the slider
+currentIndex = duplicateCount;
+slideToIndex(currentIndex);
 
 function slideToIndex(index) {
   sliderWrapper.style.transform = `translateX(-${index * (slideWidth + slideMargin)}px)`;
@@ -23,16 +37,16 @@ function slideToIndex(index) {
 }
 
 function slidePrev() {
-  if (currentIndex === 0) {
-    slideToIndex(totalItems);
+  if (currentIndex === duplicateCount) {
+    slideToIndex(updatedTotalItems - duplicateCount);
   } else {
     slideToIndex(currentIndex - 1);
   }
 }
 
 function slideNext() {
-  if (currentIndex === totalItems) {
-    slideToIndex(0);
+  if (currentIndex === updatedTotalItems - duplicateCount) {
+    slideToIndex(duplicateCount);
   } else {
     slideToIndex(currentIndex + 1);
   }
