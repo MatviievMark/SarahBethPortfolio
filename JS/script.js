@@ -27,46 +27,46 @@ const siteLogo = document.querySelector('.logo a');
 
 // Get all the menu items
 const navLinks = document.querySelectorAll('.menu-list li');
-const studioPolicyBtn = document.getElementById('studioPolicy');
+// const studioPolicyBtn = document.getElementById('studioPolicy');
 
 
 // Function to open the studio policy overlay
-function openStudioPolicyOverlay() {
-  studioPolicyOverlay.style.display = 'flex';
-  overlayOpenCount = 1;
-  overlayJustOpened = true; // Set flag as overlay is just opened
-  setTimeout(() => overlayJustOpened = false, 100); // Reset flag after short delay
-}
+// function openStudioPolicyOverlay() {
+//   studioPolicyOverlay.style.display = 'flex';
+//   overlayOpenCount = 1;
+//   overlayJustOpened = true; // Set flag as overlay is just opened
+//   setTimeout(() => overlayJustOpened = false, 100); // Reset flag after short delay
+// }
 
-// Function to close the studio policy overlay
-function closeStudioPolicyOverlay() {
-  studioPolicyOverlay.style.display = 'none';
-  overlayOpenCount = 0;
-  document.body.classList.remove('body-fixed');
-  navbar.style.backgroundColor = ''; // Revert the navbar color
+// // Function to close the studio policy overlay
+// function closeStudioPolicyOverlay() {
+//   studioPolicyOverlay.style.display = 'none';
+//   overlayOpenCount = 0;
+//   document.body.classList.remove('body-fixed');
+//   navbar.style.backgroundColor = ''; // Revert the navbar color
 
-}
+// }
 
-// Event listener for studioPolicyBtn 
-studioPolicyBtn.addEventListener('click', openStudioPolicyOverlay);
+// // Event listener for studioPolicyBtn 
+// studioPolicyBtn.addEventListener('click', openStudioPolicyOverlay);
 
-// Event listener for each menu item
-navLinks.forEach(item => {
-  item.addEventListener('click', function () {
-    // Remove the 'active' class from all menu items
-    navLinks.forEach(menuItem => menuItem.classList.remove('active-menu-list'));
+// // Event listener for each menu item
+// navLinks.forEach(item => {
+//   item.addEventListener('click', function () {
+//     // Remove the 'active' class from all menu items
+//     navLinks.forEach(menuItem => menuItem.classList.remove('active-menu-list'));
 
-    // Add the 'active' class to the clicked menu item
-    this.classList.add('active-menu-list');
+//     // Add the 'active' class to the clicked menu item
+//     this.classList.add('active-menu-list');
 
-    // Close the studio policy overlay if it's open, and the clicked item is not studioPolicyBtn
-    if (item.id !== 'studioPolicy' && studioPolicyOverlay.style.display === 'flex' && overlayOpenCount === 1) {
-      if (!overlayJustOpened) { // Only close if the overlay wasn't just opened
-        closeStudioPolicyOverlay();
-      }
-    }
-  });
-});
+//     // Close the studio policy overlay if it's open, and the clicked item is not studioPolicyBtn
+//     if (item.id !== 'studioPolicy' && studioPolicyOverlay.style.display === 'flex' && overlayOpenCount === 1) {
+//       if (!overlayJustOpened) { // Only close if the overlay wasn't just opened
+//         closeStudioPolicyOverlay();
+//       }
+//     }
+//   });
+// });
 
 // Bible verse scroll up animation 
 window.addEventListener('scroll', function() {
@@ -214,49 +214,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // PDF Modal 
 
-document.addEventListener('DOMContentLoaded', (event) => {
-  const studioPolicyBtn = document.getElementById('studioPolicy');
-  const closeOverlayBtn = document.querySelector('.close-overlay-button');
-  const overlay = document.getElementById('studioPolicyOverlay');
+// document.addEventListener('DOMContentLoaded', (event) => {
+//   const studioPolicyBtn = document.getElementById('studioPolicy');
+//   const closeOverlayBtn = document.querySelector('.close-overlay-button');
+//   const overlay = document.getElementById('studioPolicyOverlay');
 
-  // Function to disable scrolling and change navbar background color
-  function openOverlay() {
-    overlay.style.display = 'flex';
-    document.body.style.overflow = 'hidden'; // Set overflow to hidden on the body
-    navbar.style.backgroundColor = 'var(--first-color)';
-    overlay.scrollTop = 0; // Reset the scroll position to the top
-  }
+//   // Function to disable scrolling and change navbar background color
+//   function openOverlay() {
+//     overlay.style.display = 'flex';
+//     document.body.style.overflow = 'hidden'; // Set overflow to hidden on the body
+//     navbar.style.backgroundColor = 'var(--first-color)';
+//     overlay.scrollTop = 0; // Reset the scroll position to the top
+//   }
 
-  // Function to enable scrolling and revert navbar background color
-  function closeOverlay() {
-    overlay.style.display = 'none';
-    document.body.style.overflow = ''; // Reset overflow on the body
-    navbar.style.backgroundColor = ''; // Revert the navbar color
-  }
+//   // Function to enable scrolling and revert navbar background color
+//   function closeOverlay() {
+//     overlay.style.display = 'none';
+//     document.body.style.overflow = ''; // Reset overflow on the body
+//     navbar.style.backgroundColor = ''; // Revert the navbar color
+//   }
 
-  studioPolicyBtn.addEventListener('click', openOverlay);
-  closeOverlayBtn.addEventListener('click', closeOverlay);
-});
-
-
+//   studioPolicyBtn.addEventListener('click', openOverlay);
+//   closeOverlayBtn.addEventListener('click', closeOverlay);
+// });
 
 
-// Calculate the height of the navbar 
 
-// When the window has finished loading
-window.addEventListener('load', function() {
-  // Get the navbar element by its class or id
-  var navbar = document.querySelector('.navbar');
 
-  // Calculate the height of the navbar
-  var navbarHeight = navbar.offsetHeight;
+// // Calculate the height of the navbar 
 
-  // Get the studio policy header element
-  var studioPolicyHeader = document.querySelector('.studio-policy-header');
+// // When the window has finished loading
+// window.addEventListener('load', function() {
+//   // Get the navbar element by its class or id
+//   var navbar = document.querySelector('.navbar');
 
-  // Set the padding-top of the studio policy header to be a bit more than the navbar height
-  studioPolicyHeader.style.paddingTop = (navbarHeight + 20) + 'px'; // Added 20px for some extra space
-});
+//   // Calculate the height of the navbar
+//   var navbarHeight = navbar.offsetHeight;
+
+//   // Get the studio policy header element
+//   var studioPolicyHeader = document.querySelector('.studio-policy-header');
+
+//   // Set the padding-top of the studio policy header to be a bit more than the navbar height
+//   studioPolicyHeader.style.paddingTop = (navbarHeight + 20) + 'px'; // Added 20px for some extra space
+// });
 
 document.addEventListener('DOMContentLoaded', function () {
   // Select the menu

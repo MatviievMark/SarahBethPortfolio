@@ -221,74 +221,58 @@ html {
 }
 
 /* Stupido Policy */
-.studio-policy-overlay {
-	display: none; /* Initially hidden */
-	position: fixed; /* Fixed position */
-	top: 0; left: 0; /* Start from top-left corner */
-	width: 100%; height: 100%; /* Full width and height */
-	background-color: var(--first-color); /* Semi-transparent background */
-	overflow-y: auto; /* Enable vertical scrolling if content overflows */
-	z-index: 10; /* Ensure it's above other content */
-	flex-direction: column; /* Stack children vertically */
-	align-items: center; /* Center children horizontally */
-	justify-content: flex-start; /* Align content to the top */
-	margin-left: auto;
-    margin-right: auto;
-}
 
+.studio-policy-container {
+	background-color: var(--first-color);
+}
 .studio-policy-header {
-    font-size: 6rem; /* Large font size for the header */
-    margin-top: 2%; /* Spacing from top */
-	margin-left: auto;
-	margin-right: auto;
+	font-size: 6rem;
 	text-align: center;
 	color: var(--third-color);
+  }
+  
+.space-filler {
+	height: 10rem;
+	background-color: var(--first-color);
 }
-
-.images-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2%; /* Padding around images */
+  .images-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2%;
 	gap: 5rem;
 	flex-direction: column;
-}
-
-.images-container img {
-    width: 55.5rem; 
-    height: auto; 
-    border-radius: 15px; 
-}
-.button-container {
-    top: 100%;
-    left: 50%;
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Adjust the space between buttons as needed */
+  }
+  
+  .images-container img {
+	width: 55.5rem;
+	height: auto;
+	border-radius: 15px;
+  }
+  
+  .button-container {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
 	padding-bottom: 5%;
-}
-
-.overlay-button {
-    padding: 10px 20px;
-    font-size: 2rem;
-    border-radius: 30px;
-    background-color: var(--second-color); /* The color from your previous close button */
-    color: var(--third-color);
-    text-decoration: none;
-    border: none;
-    outline: none;
-    transition: background-color 0.3s;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-	width: 200px; /* Set your desired width */
-    height: 60px;
-}
-
-#studioPolicyOverlay {
-	/* Existing styles */
-	overflow-y: auto;
+  }
+  
+  .overlay-button {
+	padding: 10px 20px;
+	font-size: 2rem;
+	border-radius: 30px;
+	background-color: var(--second-color);
+	color: var(--third-color);
+	text-decoration: none;
+	border: none;
+	outline: none;
+	transition: background-color 0.3s;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 200px;
+	height: 60px;
 }
 
 /* Expantion of the image */

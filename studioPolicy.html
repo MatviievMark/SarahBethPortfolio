@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="manifest" href="./manifest.json">
+  <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="./public/apple-touch-icon.png">
+
+  <title>Studio Policy | Mullen Music</title>
+
+  <!-- Import CSS File -->
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="stylesheet" href="./CSS/responsive.css">
+
+  <!-- Import Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Import Box Icons  -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body onload="preLoader()">
+
+  <div id="loading"></div>
+
+  <!-- Go to Up button -->
+  <button onclick="topFunction()" id="moveTopBtn" title="Go to top"><i class="fas fa-angle-up"></i></button>
+
+  <!-- Navbar  -->
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo">
+        <a href="index.html">
+          <img src="./assets/Image/wordLogo.png" alt="Sarah Beth Mullen Music Logo">
+        </a>
+      </div>
+      
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+      
+        <li><a href="#services">Services</a></li> <!-- Services -->
+        <li><a href="#about">About</a></li> <!--About -->
+        <li><a href="#reviews">Reviews</a></li> <!--Reviews-->
+        <li><a href="index.html" id="studioPolicy">Home</a></li>
+        <li><a href="#contact" class="contact-button">Contact</a></li> <!--Contact-->
+
+      
+      </ul>
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <div class="studio-policy-container">
+    <div class="space-filler"></div>
+    <h1 class="studio-policy-header">Studio Policy</h1>
+    <div class="images-container">
+      <img src="assets/studioPolicy/slide1.png" alt="Image 1" class="expandable-image">
+      <img src="assets/studioPolicy/slide2.png" alt="Image 2" class="expandable-image">
+      <img src="assets/studioPolicy/slide3.png" alt="Image 3" class="expandable-image">
+      <img src="assets/studioPolicy/slide4.png" alt="Image 4" class="expandable-image">
+      <img src="assets/studioPolicy/slide5.png" alt="Image 5" class="expandable-image">
+      <img src="assets/studioPolicy/slide6.png" alt="Image 6" class="expandable-image">
+      <img src="assets/studioPolicy/slide7.png" alt="Image 7" class="expandable-image">
+    </div>
+    <div class="button-container">
+      <a href="index.html" class="overlay-button close-overlay-button">Close</a>
+      <a href="assets/docum/studioPolicy.pdf" download class="overlay-button download-pdf-button">Download</a>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+  <!-- Import JS File -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="./JS/swiper-bundle.min.js"></script>
+  <script src="./JS/script.js"></script>
+  <script src="./RegisterServiceWorker.js"></script>
+  <script src="./JS/reviewsScript.js"></script>
+  <script src="./JS/imageSlider.js"></script>
+</body>
+</html>
