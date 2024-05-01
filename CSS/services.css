@@ -201,15 +201,16 @@
 }
 
 /* Calendar */
+/* Calendar */
 #calendar {
   width: 40%;
-  max-height: 100vh; /* Adjust this value as needed */
+  max-height: 100vh;
   background-color: var(--first-color);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; /* Enables vertical scrolling */
-  border: 10px solid var(--first-color)
+  overflow-y: auto;
+  border: 10px solid var(--first-color);
 }
 
 #calendar h1 {
@@ -226,11 +227,10 @@
   background-color: var(--white);
   border-radius: 10px;
   margin: 20px auto;
-  /* Removed margin-left */
 }
 
-
-.week, .special {
+.week,
+.special {
   padding: 10px;
   margin: 5px 0;
   background-color: var(--third-color);
@@ -245,6 +245,37 @@
 h2 {
   margin: 0 0 20px 0;
   color: var(--first-color);
+}
+
+/* Expand Calendar Button */
+/* .mobile-only {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .mobile-only {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: var(--first-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+} */
+
+.expand-button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: var(--second-color);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  cursor: pointer;
 }
 
 /* Add media queries to ensure responsiveness */

@@ -3,6 +3,18 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(response => response.json())
     .then(calendarData => {
       const calendarElement = document.getElementById('calendar');
+      // Expend button for mobile view
+      if (window.innerWidth < 768) {
+        const expandButton = document.createElement('button');
+        expandButton.textContent = 'Expand Calendar';
+        expandButton.className = 'expand-button';
+        expandButton.addEventListener('click', function() {
+          window.location.href = 'calBig.html';
+        });
+        calendarElement.insertBefore(expandButton, calendarElement.firstChild);
+      }
+
+
       calendarData.forEach(item => {
         const weekElement = document.createElement('div');
         weekElement.className = item.special ? 'week special' : 'week';
@@ -27,9 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
       if (window.innerWidth >= 768) {
         // Call the function to match heights only if not on a mobile display
         matchHeights();
-      } else {
-        // Remove the fixed height for mobile devices
-        calendarElement.style.height = 'auto';
       }
     })
     .catch(error => {

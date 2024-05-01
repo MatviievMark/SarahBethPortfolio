@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0e1313" />
+<link rel="manifest" href="./manifest.json">
+<link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="./public/apple-touch-icon.png">
+
+<title id="title">Mullen Music</title>
+
+<!-- Import CSS File -->
+<link rel="stylesheet" href="./CSS/style.css">
+<link rel="stylesheet" href="./CSS/responsive.css">
+<link rel="stylesheet" href="./CSS/services.css">
+
+
+<!-- Import Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<!-- Import Box Icons  -->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<!-- Map -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+
+
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--first-color);
+    }
+
+    #calendar {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: visible;
+    color: var(--text-color);
+    }
+
+    .space-filler {
+        height: 10rem;
+      }
+  </style>
+</head>
+
+<body onload="preLoader()">
+
+<div id="loading"></div>
+
+<!-- Go to Up button -->
+<button onclick="topFunction()" id="moveTopBtn" title="Go to top"><i class="fas fa-angle-up"></i></button>
+
+<!-- Navbar  -->
+<nav class="navbar">
+    <div class="content">
+    <div class="logo">
+        <a href="index.html#">
+        <img src="./assets/Image/wordLogo.png" alt="Sarah Beth Mullen Music Logo">
+        </a>
+    </div>
+    
+    <ul class="menu-list">
+        <div class="icon cancel-btn">
+        <i class="fas fa-times"></i>
+        </div>
+    
+        <li><a href="index.html#services">Services</a></li> <!-- Services -->
+        <li><a href="index.html#about">About</a></li> <!--About -->
+        <li><a href="index.html#reviews">Reviews</a></li> <!--Reviews-->
+        <li><a href="index.html#studioPolicy" id="studioPolicy">StudioPolicy</a></li>
+        <li><a href="index.html#contact" class="contact-button">Contact</a></li> <!--Contact-->
+
+    
+    </ul>
+    <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+    </div>
+</nav>  
+
+    <div class="space-filler"></div>
+    
+    <div id = "calendar">
+      <h1>Semester Calendar</h1>
+      <hr>
+    </div>
+
+
+<div id="footer"></div>
+
+
+
+
+<!-- Import JS File -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="./JS/script.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('content-manager/calendar.json')
+        .then(response => response.json())
+        .then(calendarData => {
+          const calendarElement = document.getElementById('calendar');
+          calendarData.forEach(item => {
+            const weekElement = document.createElement('div');
+            weekElement.className = item.special ? 'week special' : 'week';
+            weekElement.innerHTML = `<h2>${item.special ? item.dates : 'Week ' + item.week + ': ' + item.dates}</h2>`;
+            calendarElement.appendChild(weekElement);
+          });
+        })
+        .catch(error => {
+          console.log('Error fetching calendar data:', error);
+        });
+    });
+  </script>
+
+
+
+</body>
+
+</html>
