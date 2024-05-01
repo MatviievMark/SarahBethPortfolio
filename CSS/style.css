@@ -235,14 +235,14 @@ html {
 	height: 10rem;
 	background-color: var(--first-color);
 }
-  .images-container {
+.images-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 2%;
 	gap: 5rem;
 	flex-direction: column;
-  }
+}
   
   .images-container img {
 	width: 55.5rem;
@@ -274,6 +274,9 @@ html {
 	width: 200px;
 	height: 60px;
 }
+
+/* Studio Policy Mobile Optimization */
+
 
 /* Expantion of the image */
 

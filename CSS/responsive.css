@@ -194,20 +194,37 @@
 
     /* Studio Policy */
 
-    .studio-policy-overlay .expandable-image {
+    .studio-policy-header {
+        font-size: 3rem;
+      }
+    
+        .space-filler {
+        height: 10rem;
+      }
+    
+      .images-container {
+        gap: 2rem;
+      }
+    
+      .images-container img {
         width: 100%;
-        overflow-x: hidden;
-        
-    }
-
-    .button-container {
+      }
+    
+      .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding-bottom: 5%;
+        width: 100%;
         margin-top: 3%;
-        width: 80%;
-    }
-    .close-expanded-image-button {
-        left: 25%;
-        top: 80%
-    }
+      }
+    
+      .overlay-button {
+        padding: 8px 16px;
+        font-size: 1.5rem;
+        width: 150px;
+        height: 50px;
+      }
 
 }
     
