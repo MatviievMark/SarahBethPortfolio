@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
       if (window.innerWidth >= 768) {
         // Call the function to match heights only if not on a mobile display
         matchHeights();
+      } else {
+        // Remove the fixed height for mobile devices
+        calendarElement.style.height = 'auto';
       }
     })
     .catch(error => {
